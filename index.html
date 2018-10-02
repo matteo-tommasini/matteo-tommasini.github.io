@@ -1,13 +1,1159 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
-	<title>Matteo Tommasini</title>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width, height=device-height initial-scale=1.0, minimum-scale=1.0">
+	
+	<title>Matteo Tommasini's homepage</title>
+	
+	<!--<script src="/cdn-cgi/apps/head/DDS_CEmp4c8CBuQZGaD3tEm3WWQ.js"></script><link href = "https://fonts.googleapis.com/css?family=Abel%7CAmatic+SC%7CRaleway%7CQuicksand:100,200,300,400,500,600,700,800,900" rel = "stylesheet">
+
+	<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+	<!-- AOS libraries -->
+	<!--<link rel = "stylesheet prefetch" href = "https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+
+	<link rel = "stylesheet prefetch" href = "https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css.map">
+
+	<link rel = "stylesheet prefetch" href = "https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js">
+
+	<link rel = "stylesheet prefetch" href = "https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js.map">-->
+
+	<!-- My js file -->
+	<link rel = "stylesheet" type = "text/css" href = "style/style_home.css">
+
+	<!-- MathJax configuration (for rendering math with LaTeX syntax) -->
+	<script type = "text/x-mathjax-config">
+		MathJax.Hub.Config({
+							tex2jax:
+								{inlineMath: [['$','$'], ['\\(','\\)']],
+								preview: "none"},
+							CommonHTML:
+								{scale: 110},
+							styles:
+								{"MathJax_Preview .abstract":
+									{"background-color": "#FCA311",
+									"font-size": "90%"},
+								".MathJax_Preview":
+									{color: "#FCA311"}}});
+	</script>
+
+	<!-- MathJax Library -->
+	<script type = "text/javascript" async
+		src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script>
+
 </head>
 <body>
-	Testing - page under construction <br>
+	<!-- Empty object behind the navigation bar, with the same height -->
+	<div id = "top"></div>
+	<!-- Navigation bar for screens with width >= 590px -->
+	<div id = "navigation-bar" class = "navigation">
+		<div class = "my_name id-my_name" data-aos = "fade-left">
+			<div>
+				<a href = "#top">
+					<span class = "first-name">Matteo</span>
+					<span class = "last-name">Tommasini</span>
+				</a>
+			</div>
+		</div>
+	
+		<div class = "menu">
+			<div id = "menu-A">
+				<div class = "menu-ac-first-line"
+				data-aos = "fade-right" data-aos-delay = "800">
+					<p><a href = "#aboutme">About me</a></p>
+					<p><a href = "#publications">Publications, preprints and theses</a></p>
+					<p><a href = "#teaching">Teaching</a></p>
+				</div>
+				<div class = "menu-ac-second-line"
+				data-aos = "fade-right" data-aos-delay = "1600">
+					<p><a href = "#talks">Talks and seminars</a></p>
+					<p><a href = "#links">Some links</a></p>
+					<p><a href = "#contacts">Contacts</a></p>
+				</div>
+			</div>
 
-	<a href="ricette/">test without domain</a>
-	<a href="https://matteotommasini.com/ricette/">test with public domain</a>
-	<a href="http://matteo-tommasini.github.com/ricette/">test with github domain</a>
+			<div id = "menu-B">
+				<div class = "menu-bd-first-line"
+				data-aos = "fade-right" data-aos-delay = "800">
+					<p><a href = "#aboutme">About me</a></p>
+					<p><a href = "#publications">Publications, preprints and theses</a></p>
+				</div>
+				<div class = "menu-bd-second-line"
+				data-aos = "fade-right" data-aos-delay = "1600">
+					<p><a href = "#teaching">Teaching</a></p>
+					<p><a href = "#talks">Talks and seminars</a></p>
+				</div>
+				<div class = "menu-bd-third-line"
+				data-aos = "fade-right" data-aos-delay = "2400">
+					<p><a href = "#links">Some links</a></p>
+					<p><a href = "#contacts">Contacts</a></p>
+				</div>
+			</div>
+
+			<div id = "menu-C">
+				<div class = "menu-ac-first-line"
+				data-aos = "fade-right" data-aos-delay = "800">
+					<p><a href = "#aboutme">About me</a></p>
+					<p><a href = "#talks">Talks and seminars</a></p>
+					<p><a href = "#publications">Publications</a></p>
+				</div>
+			<div class = "menu-ac-second-line"
+			data-aos = "fade-right" data-aos-delay = "1600">
+					<p><a href = "#teaching">Teaching</a></p>
+					<p><a href = "#links">Some links</a></p>
+					<p><a href = "#contacts">Contacts</a></p>
+				</div>
+			</div>
+
+			<div id = "menu-D">
+				<div class = "menu-bd-first-line"
+				data-aos = "fade-right" data-aos-delay = "800">
+					<p><a href = "#aboutme">About me</a></p>
+					<p><a href = "#talks">Talks and seminars</a></p>
+				</div>
+				<div class = "menu-bd-second-line"
+				data-aos = "fade-right" data-aos-delay = "1600">
+					<p><a href = "#publications">Publications</a></p>
+					<p><a href = "#teaching">Teaching</a></p>
+				</div>
+				<div class = "menu-bd-third-line"
+				data-aos = "fade-right" data-aos-delay = "2400">
+					<p><a href = "#links">Some links</a></p>
+					<p><a href = "#contacts">Contacts</a></p>
+				</div>
+			</div>
+		</div>
+		<!-- End of menu for big screens-->
+
+		<!-- Navigation bar for small screens (to be used only after scrolling)-->
+		<div id = "short-nav">
+			<div class = "line-short-nav">
+				<div class = "my_name">
+					<div>
+						<a href = "#top">
+							<span class = "first-name">Matteo</span>
+							<span class = "last-name">Tommasini</span>
+						</a>
+					</div>
+				</div>
+				<div class = "menu-short-nav">
+					<p><a href = "#aboutme">About me</a></p>
+				<p><a href = "#publications">Publications</a></p>
+				</div>
+			</div>
+			<div class = "line-short-nav">
+				<div class = "menu-short-nav">
+					<p><a href = "#talks">Seminars</a></p>
+					<p><a href = "#teaching">Teaching</a></p>
+					<p><a href = "#links">Links</a></p>
+					<p><a href = "#contacts">Contacts</a></p>
+				</div>
+			</div>
+		</div>
+		<!-- End of navigation bar for small screens -->
+	</div>
+	<!-- End of navigation bar for screens with width >= 590px -->
+	
+	<!-- Navigation bar for screens with width < 590px -->
+	<div id = "navigation-bar-phones" class = "navigation">
+		<div class = "my_name id-my_name" data-aos = "fade-left">
+			<div>
+				<a href = "#top">
+					<span class = "first-name">Matteo</span>
+					<span class = "last-name">Tommasini</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="dropdown">
+			<button class="dropbtn" id = "menu-button-1">Menu</button>
+			<button class="dropbtn" id = "menu-button-2">&#9776;</button>
+			<div id = "myDropdown" class="dropdown-content dropbtn-close">
+				<a href = "#aboutme">About me</a>
+				<a href = "#publications">Publications, preprints and theses</a>
+				<a href = "#teaching">Teaching</a>
+				<a href = "#talks">Talks and seminars</a>
+				<a href = "#links">Some links</a>
+				<a href = "#contacts">Contacts</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- This will be used later to show (in full screen) details (about teaching and scientific papers)
+	At the beginning it has style display -->
+		
+	<a id = "button-box" class = "boxclose-closed"></a>
+	<div id = "big-container" class = "boxclose-closed">
+		<div id = "big-container-title"></div>
+		<div id = "big-container-details"></div>
+	</div>
+
+
+	<div class = "my_section-image-background" id = "cover" data-aos = "fade-up" data-aos-delay = "2000">
+		<div class = "cover-content" data-aos = "fade-up" data-aos-delay = "2500">
+			<div class = "my_margins">
+				<div>
+					<h1>Welcome to</h1><h1>my personal website!</h1>
+					<h2>Scroll down to</h2><h2>learn more</h2><h2>about me...</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class = "anchor" id = "aboutme"></div>
+	<div class = "my_section" id = "section-about">
+		<h3 id = "about-me-title-top">About me</h3>
+		<div class = "flex-container">
+			<div class="flex-item" data-aos = "fade-up"
+			data-aos-delay = "300" id = "about-me-left">
+				<h3>About me</h3>
+				<img src = "images/photo_TOMMASINI_Matteo.jpg" id = "myphoto" alt = "photo of Matteo Tommasini">
+			</div>
+			<div class="flex-item col-blur text" data-aos = "fade-up"
+			data-aos-delay = "300" id = "about-me-right">
+				<h3>About me</h3>
+				<p>I was born in Italy in 1985; 13 years ago I decided to study Mathematics: after a Bachelor in Bologna, I got a Master and a Ph.D. in Triest; then I worked for a few years as a Mathematics researcher (in the fields of algebraic and complex geometry, algebraic topology and category theory).</p>
+			</div>
+		</div>
+	</div>
+
+	<div class = "my_section-image-background" id = "cv">
+		<div class = "flex-container">
+			<div class="flex-item col-blur text" data-aos = "fade-up" id = "cv-first-col">
+				<h4>Currently</h4>
+				<p>Since July 2015 I live in Vienna, where I've learned German from scratch, reaching a C1 level in March 2017 (apart from that, I speak Italian, English and French). In the last year I've been also studying some programming languages in order to work with Big Data and Machine Learning.</p>
+			</div>
+			
+			<div class="flex-item col-blur text" data-aos = "fade-up" id = "cv-second-col">
+				<p>From June 2017 I work as Scientific Manager of the SFB Project <a href = "http://sfb65.univie.ac.at/" target = _blank>Taming Complexity in partial differential systems</a> with nodes at the <a href = "https://www.univie.ac.at/en/" target = _blank>University of Vienna (UniWien)</a>, the <a href = "https://www.tuwien.ac.at/en/" target = _blank>Vienna University of Technology (TU Wien)</a>, and the <a href = "https://ist.ac.at/" target = _blank>Institute of Science and Technology Austria (IST)</a>.</p>
+			</div>
+		</div>
+    </div>
+
+	<!-- This part is a duplicate of the second column above. It has to be used only for small screens
+	(see the css file) -->
+	<div class = "my_section" id = "cv-duplicated">
+		<div class = "flex-container">
+			<div class="flex-item col-blur text" data-aos = "fade-up"
+				id = "cv-duplicated-column">
+				<div class = "divide-bottom" id = "cv-duplicated-first-col">
+					<h4>Currently</h4>
+					<p>Since July 2015 I live in Vienna, where I've learned German from scratch, reaching a C1 level in March 2017 (apart from that, I speak Italian, English and French). In the last year I've been also studying some programming languages in order to work with Big Data and Machine Learning.</p>
+				</div>
+				<div>
+					<p>From June 2017 I work as Scientific Manager of the SFB Project <a href = "http://sfb65.univie.ac.at/" target = _blank>Taming Complexity in partial differential systems</a> with nodes at the <a href = "https://www.univie.ac.at/en/" target = _blank>University of Vienna (UniWien)</a>, the <a href = "https://www.tuwien.ac.at/en/" target = _blank>Vienna University of Technology (TU Wien)</a>, and the <a href = "https://ist.ac.at/" target = _blank>Institute of Science and Technology Austria (IST)</a>.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class = "my_section">
+		<div class = "flex-container">
+			<div class="flex-item col-blur text" data-aos = "fade-up"
+			id = "previous-work-first-col">
+				<h4>Previously</h4>
+				<div class = "divide-both">
+					<p>In April and May 2015 I was a teacher of mathematics at the Upper Secondary School <span class = "italic">Serpieri</span> in Bologna.</p>
+				</div>
+				<div class = "divide-both">
+					<p>From April 2013 until March 2015 I worked as post-doc at the <a href = "http://wwwfr.uni.lu/recherche/fstc/mathematics_research_unit" target = _blank>Mathematics Research Unit</a> of the <a href = "http://wwwen.uni.lu/" target = _blank>University of Luxembourg</a> (with an AFR grant by <a href = "http://www.fnr.lu/" target = _blank>FNR</a> – cofunded by a <a href = "http://ec.europa.eu/research/mariecurieactions/" target = _blank>Marie Curie</a> grant).</p>
+				</div>
+				<div class = "divide-both previous-work-duplicated">
+					<p>From November 2012 until February 2013 I was a postdoc at the <a href = "http://riemanncenter.de/" target = _blank>Riemann Center for Geometry and Physics</a> &#8211; <a href = "http://www.iag.uni-hannover.de/en/" target = _blank>Institute of Algebraic Geometry</a> of <a href = "http://www.uni-hannover.de/en/index.php" target = _blank>Leibniz Universität Hannover</a>.</p>
+				</div>
+				<div class = "divide-both previous-work-duplicated">
+					<p>I got my Ph.D. in Geometry at the <a href = "http://www.sissa.it/main/" target = _blank>International School of Advanced Studies</a> (SISSA-ISAS) in Trieste in October 2012 under the supervision of Professor <a href = "http://www.liv.ac.uk/~newstead/" target = _blank>Peter Newstead</a> (University of Liverpool).</p>
+				</div>
+			</div>
+			<div class="flex-item col-blur text" data-aos = "fade-up"
+			id = "previous-work-second-col">
+				<div class = "divide-both">
+					<p>From November 2012 until February 2013 I was a postdoc at the <a href = "http://riemanncenter.de/" target = _blank>Riemann Center for Geometry and Physics</a> &#8211; <a href = "http://www.iag.uni-hannover.de/en/" target = _blank>Institute of Algebraic Geometry</a> of <a href = "http://www.uni-hannover.de/en/index.php" target = _blank>Leibniz Universität Hannover.</a></p>
+				</div>
+				<div class = "divide-both">
+					<p>I got my Ph.D. in Geometry at the <a href = "http://www.sissa.it/main/" target = _blank>International School of Advanced Studies</a> (SISSA-ISAS) in Trieste in October 2012 under the supervision of Professor <a href = "http://www.liv.ac.uk/~newstead/" target = _blank>Peter Newstead</a> (University of Liverpool).</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class = "my_section cv-in-pdf" data-aos = "zoom-in">
+		<div class = "flex-container">
+			<div class="flex-item col-blur text" data-aos = "zoom-in">
+				<p>If you are interested in a short version (2 pages) of my CV, please follow one of the following links:</p>
+			</div>
+			<div class="flex-item col-blur text" data-aos = "zoom-in">
+				<ul class = "ul-cv">
+					<li>
+						<a href = "http://matteotommasini.altervista.org/pdfs/cvs/Short_CV__TOMMASINI_Matteo.pdf" target = _blank>Short CV in English</a>
+					</li>
+					<li>
+						<a href = "http://matteotommasini.altervista.org/pdfs/cvs/Kurzlebenslauf__TOMMASINI_Matteo.pdf" target = _blank>Short CV in German</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class = "my_section cv-in-pdf" data-aos = "zoom-out">
+		<div class = "flex-container">
+			<div class="flex-item col-blur text" data-aos = "zoom-out">
+				<p>A longer version (with talks, teaching and published papers) is available at the following links:</p>
+			</div>
+			<div class="flex-item col-blur text" data-aos = "zoom-out">
+				<ul class = "ul-cv">
+					<li>
+						<a href = "http://matteotommasini.altervista.org/pdfs/cvs/CV_TOMMASINI_Matteo.pdf" target = _blank>CV in English</a>
+					</li>
+					<li>
+						<a href = "http://matteotommasini.altervista.org/pdfs/cvs/Lebenslauf_TOMMASINI_Matteo.pdf" target = _blank>CV in German</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class = "anchor" id = "publications"></div>
+	<div class = "my_section" id = "section-publications">
+		<div class = "divide-bottom" data-aos = "slide-up">
+			<h3>Publications, preprints and theses</h3>
+			<p class = "my_subtitle">If you want more info, simply click on any title below.</p>
+		</div>
+
+		<div data-aos = "slide-up">
+		<h4>Publications and papers accepted for publication</h4>
+		<div class = "flex-container divide-bottom four-papers">
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Orbifolds and groupoids</h5>
+				</div>
+
+				<div class = "details">
+					<p>Published on "<a href = "https://www.journals.elsevier.com/topology-and-its-applications/" target = _blank>Topology and its Applications</a>" (Elsevier), Vol. 159, Issue 3, pp. 756-786, 15 February 2012.</p>
+
+					<p>Download the published version from <a href = "http://www.sciencedirect.com/science/article/pii/S0166864111005311" target = _blank>here</a> and the preprint (with some more details) from <a href = "http://arxiv.org/abs/1008.0988" target = _blank>arXiv</a>.</p>
+
+					<div class = "abstract">
+						<p>We define a $2$-category structure $(\textbf{Pre-Orb})$ on the category of reduced complex orbifold atlases. We construct a $2$-functor $F$ from $(\textbf{Pre-Orb})$ to the $2$-category $(\textbf{Grp})$ of proper étale effective groupoid objects over the complex manifolds.</p>
+
+						<p>Both on $(\textbf{Pre-Orb})$ and on $(\textbf{Grp})$ there are natural equivalence relations on objects: (a natural extension of) equivalence of orbifold atlases in $(\textbf{Pre-Orb})$ and Morita equivalences in $(\textbf{Grp})$. We prove that $F$ induces a bijection between the equivalence classes of its source and target.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Some insights on bicategories of fractions: comparison results,
+					associators and compositions of 2-morphisms</h5>
+				</div>
+
+				<div class = "details">
+					<p>Published on "<a href = "http://www.tac.mta.ca/tac/" target = _blank>Theory and Applications of Categories</a>", Vol. 31, No. 10, pp. 257-329, 19 April 2016.</p>
+
+					<p>Download the published version from <a href = "http://www.tac.mta.ca/tac/volumes/31/10/31-10.pdf" target = _blank>here</a> and the preprint from <a href = "http://arxiv.org/abs/1410.3990" target = _blank>arXiv</a>.</p>
+		
+					<div class = "abstract">
+						<p>In this paper we investigate the construction of bicategories of fractions originally described by D. Pronk: given any bicategory $\mathbf{\mathscr{C}}$ together with a suitable class of morphisms $\mathbf{W},$ one can construct a bicategory $\mathbf{\mathscr{C}}\left[\mathbf{W}^{-1}\right],$ where all the morphisms of $\mathbf{W}$ are turned into internal equivalences$,$ and that is universal with respect to this property.</p>
+
+						<p>Most of the descriptions leading to this construction were long and heavily based on the axiom of choice. In this paper we considerably simplify the description of the equivalence relation on $2$-morphisms and the constructions of associators, vertical and horizontal compositions in $\mathbf{\mathscr{C}}\left[\mathbf{W}^{-1}\right],$ thus proving that the axiom of choice is not needed under certain conditions. The simplified description of associators and compositions will also play a crucial role in two forthcoming papers about pseudofunctors and equivalences between bicategories of fractions.</p>
+					</div>
+				</div>
+			</div>
+	
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>A bicategory of reduced orbifolds from the point of view of differential geometry</h5>
+				</div>
+
+				<div class = "details">
+					<p>Published on "<a href = "http://www.journals.elsevier.com/journal-of-geometry-and-physics/" target = _blank>Journal of Geometry and Physics</a>" (Elsevier), Vol. 108 (2016), pp. 117 - 137.</p>
+
+					<p>Download the published version from <a href = "http://www.sciencedirect.com/science/article/pii/S0393044016300699" target = _blank>here </a>and the preprint from <a href = "http://arxiv.org/abs/1304.6959v2" target = _blank>arXiv</a>.</p>
+	
+					<div class = "abstract">
+						<p>We describe a bicategory $(\mathcal{R}\mathbf{ed}\,\mathcal{O}\mathbf{rb})$ of reduced orbifolds in the framework of differential geometry (i.e. without any explicit reference to the notions of Lie groupoids or differentiable stacks$,$ but only using orbifold atlases$,$ local lifts and changes of charts).</p>
+
+						<p>In order to construct such a bicategory$,$ we firstly define a $2$-category $(\mathcal{R}\mathbf{ed}\,\mathcal{A}\mathbf{tl})$ whose objects are reduced orbifold atlases (on any paracompact$,$ second countable$,$ Hausdorff topological space). The definition of morphisms is obtained as a slight modification of a definition by A. Pohl$,$ while the definition of $2$-morphisms and compositions of them is new in this setup. Using the bicalculus of fractions described by D. Pronk$,$ we are able to construct the bicategory $(\mathcal{R}\mathbf{ed}\,\mathcal{O}\mathbf{rb})$ from the $2$-category $(\mathcal{R}\mathbf{ed}\,\mathcal{A}\mathbf{tl})$.</p>
+
+						<p>We prove that $(\mathcal{R}\mathbf{ed}\,\mathcal{O}\mathbf{rb})$ is equivalent to the bicategory of reduced orbifolds described in terms of proper$,$ effective$,$ étale Lie groupoids by D. Pronk and I. Moerdijk$,$ and to the well-known $2$-category of reduced orbifolds constructed from a suitable class of differentiable Deligne-Mumford stacks.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Right saturations and induced pseudofunctors between bicategories of fractions</h5>	
+				</div>
+
+				<div class = "details">
+					<p>Accepted for publication by "<a href = "https://www.journals.elsevier.com/journal-of-pure-and-applied-algebra/" target = _blank>Journal of Pure and Applied Algebra</a>" (Elsevier).</p>
+
+					<p>The preprint can be found on <a href = "http://arxiv.org/abs/1410.5075" target = _blank>arXiv</a> (October 2014).</p>
+
+					<div class = "abstract">
+						<p>We fix any bicategory $\mathbf{\mathscr{A}}$ together with a class of morphisms $\mathbf{W}_{\mathbf{\mathscr{A}}},$ such that there is a bicategory of fractions $\mathbf{\mathscr{A}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{A}}}\right]$ (as described by D. Pronk).</p>
+
+						<p>Given another such pair $(\mathbf{\mathscr{B}},\mathbf{W}_{\mathbf{\mathscr{B}}})$ and any pseudofunctor $\mathcal{F}:\mathbf{\mathscr{A}}\rightarrow\mathbf{\mathscr{B}},$ we find necessary and sufficient conditions in order to have an induced pseudofunctor $\mathcal{G}:\mathbf{\mathscr{A}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{A}}}\right]\rightarrow\mathbf{\mathscr{B}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{B}}}\right]$.</p>
+
+						<p>Moreover$,$ we give a simple description of $\mathcal{G}$ in the case when the class $\mathbf{W}_{\mathbf{\mathscr{B}}}$ is "right saturated".</p>
+					</div>
+
+					<div class = "additional-info">
+						<p>The interested reader can download an additional <a href = "http://matteotommasini.altervista.org/pdfs/appendix/An_appendix_to_Some_insights_on_bicategories_of_fractions_-_II.pdf" target = _blank><strong>Appendix</strong> from here</a> (<a href = "http://matteotommasini.altervista.org/pdfs/appendix/An_appendix_to_Some_insights_on_bicategories_of_fractions_-_II.tex" target = _blank>from here you can also download the TeX file</a>).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	
+		<div data-aos = "slide-up">
+		<h4>Papers submitted</h4>
+		<div class = "flex-container divide-bottom four-papers">
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Universal families of extensions of coherent systems</h5>
+				</div>
+
+				<div class = "details">
+					<p>The preprint can be found on <a href = "http://arxiv.org/abs/1212.0125" target = _blank>arXiv</a> (December 2012).</p>
+
+					<div class = "abstract">
+						<p>We prove a result of cohomology and base change for families of coherent systems over a curve. We use that in order to prove the existence of (non-split$,$ non-degenerate) universal families of extensions of coherent systems (in the spirit of the paper <span class = "italic" style = "font-size: 25px">Universal families of extensions</span> by H. Lange). Such results will be applied in subsequent papers in order to describe the wallcrossing for some moduli spaces of coherent systems.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Equivalences of bicategories of fractions</h5>
+				</div>
+
+				<div class = "details">
+					<p>The preprint can be found on <a href = "http://arxiv.org/abs/1410.6395" target = _blank>arXiv</a> (October 2014).</p>
+					
+					<div class = "abstract">
+						<p>We fix any bicategory $\mathbf{\mathscr{A}}$ together with a class of morphisms $\mathbf{W}_{\mathbf{\mathscr{A}}},$ such that there is a bicategory of fractions $\mathbf{\mathscr{A}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{A}}}\right]$. Given another such pair $(\mathbf{\mathscr{B}},\mathbf{W}_{\mathbf{\mathscr{B}}})$ and any pseudofunctor $\mathcal{F}:\mathbf{\mathscr{A}}\rightarrow\mathbf{\mathscr{B}},$ we find necessary and sufficient conditions in order to have an induced equivalence of bicategories from $\mathbf{\mathscr{A}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{A}}}\right]$ to $\mathbf{\mathscr{B}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{B}}}\right]$.</p>
+
+						<p>In the special case when $\mathbf{W}_{\mathbf{\mathscr{B}}}$ consists only of internal equivalences of $\mathbf{\mathscr{B}},$ the bicategories $\mathbf{\mathscr{B}}$ and $\mathbf{\mathscr{B}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{B}}}\right]$ are equivalent. So the previous result gives necessary and sufficient conditions in order to have an equivalence from any bicategory of fractions $\mathbf{\mathscr{A}}\left[\mathbf{W}^{-1}_{\mathbf{\mathscr{A}}}\right]$ to any given bicategory $\mathbf{\mathscr{B}}$.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Weak fiber products in bicategories of fractions</h5>
+				</div>
+
+				<div class = "details">
+					<p>The preprint can be found on <a href = "http://arxiv.org/abs/1412.3295" target = _blank>arXiv</a> (December 2014).</p>
+					<div class = "abstract">
+						<p>We fix any pair $(\mathbf{\mathscr{C}},\mathbf{W})$ consisting of a bicategory and a class of morphisms in it, admitting a bicalculus of fractions$,$ i.e. a "localization" of $\mathbf{\mathscr{C}}$ with respect to the class $\mathbf{W}.$ In the resulting bicategory of fractions$,$ we identify necessary and sufficient conditions for the existence of weak fiber products.</p>
+					</div>
+				</div>
+			</div>
+	
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Atlases for ineffective orbifolds</h5>
+					(in collaboration with Dorette Pronk and Laura Scull)
+				</div>
+
+				<div class = "details">
+					<p>The preprint can be found on <a href = "http://arxiv.org/abs/1606.04439" target = _blank>arXiv</a> (June 2016).</p>
+
+					<div class = "abstract">
+						<p>We give a definition of atlases for ineffective orbifolds$,$ and prove that this definition leads to the same notion of orbifold as that defined via topological groupoids.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div data-aos = "slide-up">
+		<h4>Theses</h4>
+		<div class = "flex-container divide-bottom three-papers">
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>The Hodge-Deligne polynomials of some moduli spaces of coherent systems</h5>
+				</div>
+
+				<div class = "details">
+					<p>Ph.D. thesis in Algebraic Geometry at <a href = "http://www.sissa.it/main/" target = _blank>SISSA</a></p>
+
+					<p>Advisor: Prof. <a href = "http://www.liv.ac.uk/~newstead/" target = _blank>Peter Newstead</a></p>
+
+					<p>Date: October 25th, 2012</p>
+
+					<p>Download from <a href = "http://matteotommasini.altervista.org/pdfs/theses/The_Hodge-Deligne_polynomials_of_some_moduli_spaces_of_coherent_systems.pdf" target = _blank>here</a></p>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Orbifolds and groupoids</h5>
+				</div>
+
+				<div class = "details">
+					<p>Master Degree at the <a href = "http://www.dmi.units.it/" target = _blank>University of Trieste</a> in collaboration with <a href = "http://www.sissa.it/main/" target = _blank>SISSA</a></p>
+
+					<p>Advisors: Prof. <a href = "http://mathsun1.univ.trieste.it/~mezzette/" target = _blank>Emilia Mezzetti</a> and Prof. <a href = "https://sites.google.com/site/barbarafantechi/barbarafantechihomepage" target = _blank>Barbara Fantechi</a></p>
+
+					<p>Date: September 24th, 2009</p>
+
+					<p>Download from <a href = "http://matteotommasini.altervista.org/pdfs/theses/Orbifold_e_gruppoidi.pdf" target = _blank>here</a> (introduction in Italian, thesis in English)</p>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title">
+					<h5>Cubiche ellittiche</h5>(elliptic curves)
+				</div>
+
+				<div class = "details">
+					<p>Bachelor Degree at the <a href = "http://www.matematica.unibo.it/Matematica/default.htm" target = _blank>University of Bologna</a></p>
+
+					<p>Advisor: Prof. <a href = "http://www.dm.unibo.it/~ida/" target = _blank>Monica Idà</a></p>
+
+					<p>Date: July 20th, 2007</p>
+
+					<p>Download from <a href = "http://matteotommasini.altervista.org/pdfs/theses/Cubiche_ellittiche.pdf" target = _blank>here</a> (only in Italian)</p>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<div data-aos = "slide-up">
+		<h4>Preprints available on request and papers in preparation</h4>
+		<p>Contact me for more details about these papers.</p>
+		<div class = "flex-container five-papers">
+			<div class="flex-item col-blur">
+				<div class = "pub-title-no-details">
+					<h5>A bicategory of reduced orbifolds from the point of view of differential geometry – II</h5>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title-no-details">
+					<h5>Wallcrossing for the moduli spaces of coherent systems of type $(2,d,2)$ – the odd case</h5>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title-no-details">
+					<h5>Weak fiber products of differentiable stacks</h5>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title-no-details">
+					<h5>Wallcrossing for the moduli spaces of coherent systems of type $(2,d,2)$ – the even case</h5>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "pub-title-no-details">
+					<h5>The Hodge-Deligne polynomials of the moduli spaces of coherent systems $G(\alpha;2,d,1)$ and $G(\alpha;3,d,1)$</h5>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+		
+	<div class = "anchor" id = "teaching"></div>
+	<div class = "my_section" id = "section-teaching">
+		<div id = "teaching-begin" data-aos = "fade-left">
+			<h3>Teaching</h3>
+			<p class = "my_subtitle">This is a list of the courses that I taught (click on each of them for more details).</p>
+		</div>
+
+		<div class = "flex-container" data-aos = "fade-right">
+			<div class="flex-item col-blur">
+				<div class = "teaching-title">
+					<h5>Mathematics</h5>
+					<p>at the Upper Secondary School "Serpieri" (Bologna, 2015)</p>
+				</div>
+
+				<div class = "details">
+					<p>In April and May 2015 I taught <span class = "italic">Mathematics</span> at the Upper Secondary School <a href = "http://www.istitutoserpieri.gov.it" target = _blank>Istituto Tecnico Agrario Arrigo Serpieri</a> (Bologna - Italy) for the classes 1D, 2D, 3B, 4B and 5B. The topics varied from basic set theory to (pre)Calculus I (limits, derivatives and integrals).</p>
+
+					<p>Below you will find the classworks (for all the classes except 5B) and the solutions to each of them (in Italian since the lectures were in Italian).</p>
+
+					<ul class = "my_dotted_list">
+						<li>
+							<p>1D: <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/verifica-11-maggio-2015.pdf" target = _blank>classwork</a> (partly written by Prof. Marantonio) and <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/soluzioni-11-maggio-2015.pdf" target = _blank>solutions</a> (11/05/2015)</p>
+						</li>
+			
+						<li>
+							<p>2D: <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/verifica-13-maggio-2015.pdf" target = _blank>classwork</a> and <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/soluzioni-13-maggio-2015.pdf" target = _blank>solutions</a> (13/05/2015)
+							</p>
+						</li>
+
+						<li>
+							<p>3B: <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/verifica-9-maggio-2015.pdf" target = _blank>classwork</a> and <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/soluzioni-9-maggio-2015.pdf" target = _blank>solutions</a> (09/05/2015)
+							</p>
+						</li>
+			
+						<li>
+							<p>4B: <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/verifica-5-maggio-2015.pdf" target = _blank>classwork</a> (written by Prof. Marantonio) and <a href = "http://matteotommasini.altervista.org/pdfs/serpieri-bologna/soluzioni-5-maggio-2015.pdf" target = _blank>solutions</a> (05/05/2015)
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+			<div class="flex-item col-blur">
+				<div class = "teaching-title">
+					<h5>Analysis 3B</h5>
+					<p>at the University of Luxembourg (exercise sessions, 2014)</p>
+				</div>
+
+				<div class = "details">
+					<p>In Autumn 2014 I gave exercise sessions for the course <span class = "italic">Analyse 3B</span> (Bachelor in Physics and Engineering) at the University of Luxembourg (lectures in French).</p>
+
+					<p>You can find the Exercise Sheets and the Lecture Notes (by Prof. Schlenker) on the <a href = "https://moodle.fstc.uni.lu/enrol/index.php?id=308" target = _blank>Moodle</a> website of the University of Luxembourg.</p>
+
+					<p>Recommended books (first 3 in French, last 3 in English):</p>
+
+					<ul class = "my_dotted_list">
+						<li>
+							<p>M. Hulin and M.F. Quinton, <span class = "italic">Outils mathématiques pour la physique: premier cycle universitaire et formation permanente, classes préparatoires</span> (Collection U. Armand Colin, 1986)</p>
+						</li>
+						<li>
+							<p>F. Liret and D. Martinais. <span class = "italic">Mathématiques pour le DEUG: Analyse 2ème année</span> (DEUG MIAS, MASS et SM. Cours de mathématiques. Dunod, 1998)</p>
+						</li>
+						<li>
+							<p>J. E. Marsden and A. Weinstein, <span class = "italic">Calculus: 1-3, volume 2</span> (Springer, 1985), available at <a href = "http://www.cds.caltech.edu/~marsden/volume/Calculus/" target = _blank>cds.caltech.edu/~marsden/volume/Calculus/</a></p>
+						</li>
+						<li>
+							<p>M. Spivak, <span class = "italic">Calculus</span> (Cambridge University Press, 2006)</p>
+						</li>
+						<li>
+							<p>J. Stewart, <span class = "italic">Calculus</span> (Available 2010 Titles Enhanced Web Assign Series. Thomson Brooks/Cole, 2008)</p>
+						</li>
+						<li>
+							<p>G. Strang, <span class = "italic">Calculus</span> (Number Bd. 1. Wellesley-Cambridge Press, 1991)</p>
+						</li>
+					</ul>
+
+					<p>Below you can find the solutions of almost all the Exercises listed in the lecture notes (lecture notes available on Moodle). All solutions are in French, since the course was given in French.</p>
+
+					<ul class = "my_dotted_list">
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-analyse-3B/chapitre_1_-_equations_differentielles.pdf" target = _blank>Chapitre 1 - Équations différentielles</a> (32 pages</p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-analyse-3B/chapitre_2_-_integrales_des_fonctions_de_plusieurs_variables.pdf" target = _blank>Chapitre 2 - Intégrales de fonctions de plusieurs variables</a> (24 pages)</p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-analyse-3B/chapitre_3_-_espaces_de_Hilbert.pdf" target = _blank>Chapitre 3 - Espaces de Hilbert</a> (19 pages)</p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-analyse-3B/chapitre_4_-_series_de_Fourier.pdf" target = _blank>Chapitre 4 - Séries de Fourier</a> (19 pages)</p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-analyse-3B/chapitre_5_-_transformee_de_Fourier.pdf" target = _blank>Chapitre 5 - Transformée de Fourier</a> (12 pages)</p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-analyse-3B/chapitre_6_-_transformee_de_Laplace.pdf" target = _blank>Chapitre 6 - Transformée de Laplace</a> (15 pages)</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		
+			<div class="flex-item col-blur">
+				<div class = "teaching-title">
+					<h5>Euclidean, non euclidean and projective geometry</h5>
+					<p>at the University of Luxembourg (exercise sessions, 2014)</p>
+				</div>
+
+				<div class = "details">
+					<p>In Spring 2014 I gave exercise sessions for the course "Géométrie euclidienne, non euclidienne et projective" (Bachelor in Mathematics) at the University of Luxembourg (lectures in English).</p>
+
+					<p>You can find the <strong>Exercise Sheets</strong> and the <strong>Lecture Notes</strong> (by Prof. Merkulov) on the <a href = "https://moodle.fstc.uni.lu/" target = _blank>Moodle</a> website of the University of Luxembourg.</p>
+
+					<p><strong>Recommended books</strong>:</p>
+
+					<ul class = "my_dotted_list">
+						<li>
+							<p>Miles Reid, Balazs Szendroi, <span class = "italic">Geometry and Topology</span> (Cambridge University Press, 2005)</p>
+						</li>
+						<li>
+							<p>Patrick J. Ryan, <span class = "italic">Euclidean, Non-Euclidean Geometry. An analytic approach</span> (Cambridge University Press, 1986)</p>
+						</li>
+					</ul>
+				
+					<p>Below you find a series of PDFs with all the <strong>exercises solved</strong>. Sheets of type A contain all the exercises that we solved in class (with more details in some cases). Sheets of type B contain all the exercises that we had no time to cover in class.</p>
+
+					<ul class = "my_dotted_list">
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_1A.pdf" target = _blank>Exercise session 1A (26/02/2014)</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_1B.pdf" target = _blank>Exercise session 1B</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_2A.pdf" target = _blank>Exercise session 2A (12/03/2014)</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_2B.pdf" target = _blank>Exercise session 2B</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_3A.pdf" target = _blank>Exercise session 3A (26/03/2014)</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_3B.pdf" target = _blank>Exercise session 3B</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_4A.pdf" target = _blank>Exercise session 4A (09/04/2014)</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_4B.pdf" target = _blank>Exercise session 4B</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_5A.pdf" target = _blank>Exercise session 5A (30/04/2014)</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_5B.pdf" target = _blank>Exercise session 5B</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_6A.pdf" target = _blank>Exercise session 6A (14/05/2014)</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_6B.pdf" target = _blank>Exercise session 6B</a></p>
+						</li>
+						<li>
+							<p><a href = "http://matteotommasini.altervista.org/pdfs/exercise-sessions-non-euclidean-geometry/exercise_session_7A.pdf" target = _blank>Exercise session 7A (28/05/2014)</a></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="flex-item col-blur">
+				<div class = "teaching-title">
+					<h5>Various mini-courses on stacks, orbifolds and prime numbers and cryptography</h5>
+					<p>at the University of Luxembourg (2013), SISSA (2013) and Upper Secondary School "Alighieri" of Ravenna (2007)</p>
+				</div>
+
+				<div class = "details">
+					<ul class = "my_dotted_list">
+						<li>
+							<p>Mini-course for doctorands: <span class = "italic">Orbifolds and 2-categories</span> - 13/05, 23/05 and 03/06/2013 - <span class = "italic">University of Luxembourg</span></p>
+						</li>
+						<li>
+							<p>Mini-course for doctorands: <span class = "italic">Introduction to (algebraic) Deligne-Mumford stacks</span> - 17/10, 24/10, 31/10, 07/11 and 14/11/2013 - <span class = "italic">University of Luxembourg</span></p>
+						</li>
+						<li>
+							<p>Mini-course for doctorands: <span class = "italic">Introduction to algebraic (Deligne-Mumford) stacks</span> - 07/12, 14/12/2011 and 07/02/2012 - <span class = "italic">SISSA</span> (Trieste)</p>
+						</li>
+						<li>
+							<p>Mini-course for high school: <span class = "italic">Prime numbers and cryptography</span> - March - May 2007 - Secondary High School <span class = "italic">Dante Alighieri</span> (Ravenna, Italy)</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class = "anchor" id = "talks"></div>
+	<div class = "my_section" id = "section-talks">
+		<div id = "talks-begin" class = "divide-bottom" data-aos = "zoom-in">
+			<h3>Talks and seminars</h3>
+		</div>
+
+		<div data-aos = "zoom-in">
+			<h4>Invited talks</h4>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk">20/02/2012</div>
+				<div class = "flex-item col-blur place-talk">
+					<a href = "http://www.liv.ac.uk/mathematical-sciences/"
+				target = _blank>University of Liverpool, UK</a>
+				</div>
+				<div class = "flex-item col-blur title-talk">
+					Hodge-Deligne polynomials of some moduli spaces of coherent systems
+				</div>
+			</div>
+
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk">30/05/2012</div>
+				<div class = "flex-item col-blur place-talk">
+					<a href = "https://www.math.uzh.ch" target = _blank>University of Zürich, Switzerland</a>
+				</div>
+				<div class = "flex-item col-blur title-talk">
+					Hodge-Deligne polynomials of some moduli spaces of coherent systems
+				</div>
+			</div>
+
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk">24/10/2012</div>
+				<div class = "flex-item col-blur place-talk">
+					<a href = "http://www.matematica.units.it/" target = _blank>University of Trieste, Italy</a>
+				</div>
+				<div class = "flex-item col-blur title-talk">
+					Hodge-Deligne polynomials of some moduli spaces of coherent systems
+				</div>
+			</div>
+		</div>
+	
+		<div data-aos = "zoom-in">
+			<h4>Talks at schools and conferences</h4>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-4">26/01/2015</div>
+				<div class = "flex-item col-blur place-talk-4">
+					<a href = "http://www2.warwick.ac.uk/fac/sci/maths" target = _blank>University of Warwick, UK</a>
+				</div>
+				<div class = "flex-item col-blur title-talk-4">
+					Wallcrossings for moduli spaces of coherent systems of type (2,d,2)
+				</div>
+				<div class = "flex-item col-blur conference-talk-4">
+					Concentration period <a href = "http://www2.warwick.ac.uk/fac/sci/maths/research/events/2014-15/symposium/poc/" target = _blank>"Moduli spaces and derived categories"</a>
+				</div>
+			</div>
+
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-4">20/06/2013</div>
+				<div class = "flex-item col-blur place-talk-4">
+					<a href = "http://www.sissa.it/" target = _blank>SISSA, Trieste, Italy</a>
+				</div>
+				<div class = "flex-item col-blur title-talk-4">
+					The Hodge-Deligne polynomials of some moduli spaces of coherent systems
+				</div>
+				<div class = "flex-item col-blur conference-talk-4">
+					2013 VBAC conference <a href = "http://people.sissa.it/~bruzzo/vbac2013/abstracts_2.html" target = _blank>"Hilbert schemes, sheaves and representations"</a>
+				</div>
+			</div>
+		</div>
+	
+		<div data-aos = "zoom-in">
+			<h4>Seminars/lectures at the <a href = "http://www.uni-hannover.de" target = _blank>Leibniz Universität Hannover, Germany</a></h4>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-3">18/02/2013</div>
+				<div class = "flex-item col-blur place-talk-3">
+					<a href = "http://www.riemanncenter.de/" target = _blank>Riemann Center</a>
+				</div>
+				<div class = "flex-item col-blur title-talk-3">
+					<a href = "http://www.iag.uni-hannover.de/364.html?&amp;L=1" target = _blank>Orbifolds as 2-categories</a>
+				</div>
+			</div>
+
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-3">08/11/2012</div>
+				<div class = "flex-item col-blur place-talk-3">
+					<a href = "http://www.iag.uni-hannover.de/" target = _blank>Institute for Algebraic Geometry</a>
+				</div>
+				<div class = "flex-item col-blur title-talk-3">
+					<a href = "http://www.iag.uni-hannover.de/ws2012_7.html?&amp;L=1" target = _blank>The Hodge-Deligne polynomials of some moduli spaces of coherent systems</a>
+				</div>
+			</div>
+		</div>
+	
+		<div data-aos = "zoom-in">
+			<h4>Seminars/lectures at the <a href = "http://www.sissa.it/" target = _blank>International School of Advanced Studies (SISSA-ISAS), Trieste, Italy</a></h4>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">23/05/2012</div>
+				<div class = "flex-item col-blur title-talk-2">
+					<a href = "https://www.math.sissa.it/seminar/hodge-deligne-polynomials-some-moduli-spaces-coherent-systems" target = _blank>Hodge-Deligne polynomials of some moduli spaces of coherent systems</a>
+				</div>
+			</div>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">22/07/2011</div>
+				<div class = "flex-item col-blur title-talk-2">
+					<a href = "https://www.math.sissa.it/seminar/moduli-spaces-coherent-systems" target = _blank>Moduli spaces of coherent systems</a>
+				</div>
+			</div>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">29/09/2010</div>
+				<div class = "flex-item col-blur title-talk-2">
+					<a href = "https://www.math.sissa.it/seminar/coherent-systems-and-brill-noether-theory" target = _blank>Coherent systems and Brill-Noether theory</a>
+				</div>
+			</div>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">05-06/07/2010</div>
+				<div class = "flex-item col-blur title-talk-2">
+					<a href = "https://www.math.sissa.it/seminar/k-theory-and-atiyah-singer-index-theorem-i" target = _blank>K-theory and the Atiyah-Singer index theorem</a>
+				</div>
+			</div>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">26/05/2010</div>
+				<div class = "flex-item col-blur title-talk-2">
+					<a href = "https://www.math.sissa.it/seminar/simple-homotopy-classification-lens-spaces" target = _blank>Simple homotopy classification of lens spaces</a>
+				</div>
+			</div>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">03/03/2010</div>
+				<div class = "flex-item col-blur title-talk-2">
+					Some basics concepts of algebraic quantum field theory
+				</div>
+			</div>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">03/03/2009</div>
+				<div class = "flex-item col-blur title-talk-2">
+					Elliptic curves: classification and group laws
+				</div>
+			</div>
+			<div class = "flex-container">
+				<div class = "flex-item col-blur date-talk-2">18/12/2008</div>
+				<div class = "flex-item col-blur title-talk-2">
+					<a href = "https://www.math.sissa.it/seminar/algebraic-stacks" target = _blank>Algebraic stacks - A basic introduction</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class = "anchor test" id = "links"></div>
+	<h3 data-aos = "fade-up">Some links</h3>
+	<div class = "my_section-image-background" data-aos = "fade-up" id = "section-links">
+		<div>
+			<h4>Professional links</h4>
+			<ul class = "my_tiles" data-aos = "flip-up">
+				<li>
+					<p><a href = "https://independent.academia.edu/MatteoTommasini" target = _blank>Academia.edu</a></p>
+				</li>
+			</ul>
+			<ul class = "my_tiles" data-aos = "flip-up">	
+				<li>
+					<p><a href = "http://www.researchgate.net/profile/Matteo_Tommasini2/" target = _blank>Research Gate</a></p>
+				</li>
+			</ul>
+			<ul class = "my_tiles" data-aos = "flip-up">
+				<li>
+					<p><a href = "https://www.linkedin.com/in/matteotommasini" target = _blank>LinkedIn</a></p>
+				</li>
+				<li>
+					<p><a href = "https://www.xing.com/profile/Matteo_Tommasini" target = _blank>Xing</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Other links: social networks and photos
+	<a href = "https://www.facebook.com/matteo.tomm" target = _blank>Facebook</a>
+	<p><a href = "https://plus.google.com/102821668699224822544/about" target = _blank>Google+</a>
+	<a href = "http://www.flickr.com/photos/matteo_tommasini/" target = _blank>Flickr</a>
+	<a href = "http://instagram.com/matteo_tommasini/" target = _blank>Instagram</a><
+	<a title = "Some photos of my garden " href = "http://giardinaggio.matteotommasini.altervista.org/" target = _blank>Some photos of my garden</a>
+	-->
+
+	<div class = "my_section">
+		<div class = "my_margins">
+			<div class = "divide-bottom" data-aos = "fade-up" id = "professional-links-duplicated">
+				<h4 class = "h4_adjusted">Professional links</h4>
+				<ul class = "my_tiles" data-aos = "flip-up">
+					<li>
+						<p><a href = "https://independent.academia.edu/MatteoTommasini" target = _blank>Academia.edu</a></p>
+					</li>
+				</ul>
+				<ul class = "my_tiles" data-aos = "flip-up">	
+					<li>
+						<p><a href = "http://www.researchgate.net/profile/Matteo_Tommasini2/" target = _blank>Research Gate</a></p>
+					</li>
+				</ul>
+				<ul class = "my_tiles" data-aos = "flip-up">
+					<li>
+						<p><a href = "https://www.linkedin.com/in/matteotommasini" target = _blank>LinkedIn</a></p>
+					</li>
+					<li>
+						<p><a href = "https://www.xing.com/profile/Matteo_Tommasini" target = _blank>Xing</a></p>
+					</li>
+				</ul>
+			</div>
+
+
+			<div data-aos = "fade-up">
+				<h4 class = "other_h4_fix">Blogs and other websites</h4>
+				<div class = "flex-container" id = "blogs-list">
+					<div class = "flex-item col-blur">
+						<div>
+							<a href = "http://ricette.matteotommasini.altervista.org/" target = _blank>Some of my recipes </a>(in Italian) and <a href = "http://recipes.matteotommasini.altervista.org/" target = _blank>some translations in English</a>
+						</div>
+					</div>
+					<div class = "flex-item col-blur">
+						<div>
+							<a href = "http://tomma25.altervista.org/" target = _blank>A (not so short) introduction to fractals</a> (only in Italian)
+						</div>
+					</div>
+					<div class = "flex-item col-blur">
+						<div>
+							<a href = "http://blognotes.matteotommasini.altervista.org/" target = _blank>My blognote</a> (used mainly to re-post articles, videos and photos that I found interesting, Italian mixed with English)
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class = "divide" data-aos = "fade-up">
+				<h4>Some (mathematical) friends and collaborators</h4>
+				<ul class = "my_tiles" id = "friends">
+					<li data-aos = "flip-up">
+						<p><a href = "http://people.sissa.it/~aborale/" target = _blank>Ada Boralevi</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.dipmatematica.unito.it/do/docenti.pl/Show?_id=aboscagg#profilo" target = _blank>Alberto Boscaggin</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.robots.ox.ac.uk/~atosi/index.html" target = _blank>Alessandra Tosi</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://people.sissa.it/~lerario/Antonio_Lerario/Home.html" target = _blank>Antonio Lerario</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "https://sites.google.com/site/mathdanielatonon/" target = _blank>Daniela Tonon</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.mscs.dal.ca/Faculty/pronk.htm" target = _blank>Dorette Pronk</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://elisadavoli.wordpress.com/" target = _blank>Elisa Davoli</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.dmi.units.it/~mezzette/" target = _blank>Emilia Mezzetti</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "https://sites.google.com/site/enricomanfredi/home" target = _blank>Enrico Manfredi</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "https://sites.google.com/site/flavianaiurlano/home" target = _blank>Flaviana Iurlano</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://math.univ-lyon1.fr/~fanelli/" target = _blank>Francesco Fanelli</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://salafrancesco.altervista.org/" target = _blank>Francesco Sala</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://giovannifaonte.weebly.com/about.html" target = _blank>Giovanni Faonte</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://faculty.fortlewis.edu/Scull_L/" target = _blank>Laura Scull</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://lucarizzi.weebly.com/" target = _blank>Luca Rizzi</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.ucl.ac.uk/~ucahmse/" target = _blank>Marcello Seri</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "https://sites.google.com/site/marcobonacini85/" target = _blank>Marco Bonacini</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://marcomorandotti.weebly.com/" target = _blank>Marco Morandotti</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://math-diism.univpm.it/garrione/" target = _blank>Maurizio Garrione</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://people.sissa.it/~mbarde/" target = _blank>Mauro Bardelloni
+						</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.dm.unibo.it/~ida/" target = _blank>Monica Idà</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://pcwww.liv.ac.uk/~pagani/" target = _blank>Nicola Pagani</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://math.uni.lu/~iena/" target = _blank>Oleksandr Iena</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.liv.ac.uk/~newstead/" target = _blank>Peter Newstead</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.math.cmu.edu/~rcristof/" target = _blank>Riccardo Cristoferi</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "https://sites.google.com/site/smnracca/" target = _blank>Simone Racca</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://www.ilpost.it/stefanomaggiolo/" target = _blank>Stefano Maggiolo</a></p>
+					</li>
+
+					<li data-aos = "flip-up">
+						<p><a href = "http://people.sissa.it/~bruzzo/webpage/" target = _blank>Ugo Bruzzo</a></p>
+					</li>	
+				</ul>
+		</div>
+	</div>
+	</div>
+
+
+	<div class = "anchor" id = "contacts"></div>
+	<h3>Contacts</h3>
+	<div id = "contacts-duplicated" data-aos = "flip-up">
+		<div>
+			<p>
+				<span class = "contact-type">email:</span>
+				<a href="/cdn-cgi/l/email-protection#a0cdc1d4d4c5cf8ed4cfcdcdc1d3c9cec992e0c7cdc1c9cc8ec3cfcd">
+				matteo.tommasini2 @gmail.com</a>
+			</p>
+		</div>
+		<div>
+			<p>
+				<span class = "contact-type">skype:</span>
+				<a href="skype:profile_name?matteo.tomm">matteo.tomm</a>
+			</p>
+		</div>
+	</div>
+
+	<div class = "my_section-image-background" id = "section-contacts">
+		<div class = "my_margins" data-aos = "flip-up">
+			<div>
+				<p>
+					<span class = "contact-type">email:</span>
+					<a href="/cdn-cgi/l/email-protection#7d101c0909181253091210101c0e1413144f3d1a101c1411531e1210">
+					<span class="__cf_email__" data-cfemail="9ef3ffeaeafbf1b0eaf1f3f3ffedf7f0f7acdef9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a>
+				</p>
+			</div>
+			<div>
+				<p>
+					<span class = "contact-type">skype:</span>
+					<a href="skype:profile_name?matteo.tomm">matteo.tomm</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<footer class = "my_section footer">
+		<div class = "my_margins">
+			&copy; Matteo Tommasini 2018
+		</div>
+	</footer>
+
+	<!-- JS library for animations, by Michał Sajnóg
+	More info at https://css-tricks.com/aos-css-driven-scroll-animation-library/ -->
+	<!--<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>-->
+	<script src = "https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
+
+	<!-- Jquery -->
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- local javascript by Matteo Tommasini-->
+	<script src = "js/index-final.js"></script>
 </body>
 </html>
