@@ -150,8 +150,13 @@ We need to subtract any additional value for the internal-navigation (if present
   min-height: calc(100% - var(--internal-navigation-height));
 }
 
+/* the 20px both here and in the next one are needed to have a distance between the bottom-navigation and the footer */
+.article-with-bottom-navigation {
+  min-height: calc(100% - var(--internal-navigation-height) - 20px);
+}
+
 .article-with-top-and-bottom-navigation {
-  min-height: calc(100% - 2 * var(--internal-navigation-height));
+  min-height: calc(100% - 2 * var(--internal-navigation-height) - 20px);
 }
 
 .divisor {
