@@ -1,0 +1,173 @@
+% (English follows)
+% Questo gruppo di 7 file .tex \`e stato creato nel Giugno 2015 da Elisa Davoli e Matteo Tommasini per il loro matrimonio.
+% Usatelo liberamente per il vostro matrimonio! Nel caso voleste ridistribuire le vostre modifiche, vi preghiamo di citare la pagina
+% blognotes.matteotommasini.altervista.org/latex-matrimonio come referenza.
+% Questo lavoro \`e distribuito con licenza CC-BY (potete copiare, distribuire e creare lavori derivati a partire da questo, a patto
+% di citare questo blog per il lavoro originale).
+% L'intero codice \`e rilasciato ``as it is'', senza nessuna garanzia di buon funzionamento (nel nostro caso funzionava alla perfezione!).
+% I pdf compilati (pagina singola e pagina doppia) si possono scaricare alla stessa pagina menzionata sopra.
+% L'unico pacchetto usato qui e che non trovate in una distribuzione standard di LaTeX \`e il pacchetto pgfornament (istruzioni nel file n. 1).
+% Una buona guida per l'installazione di pgfornament in debian e derivate \`e questa:
+% https://toihoctap.wordpress.com/2013/02/24/install-package-pgfornament-for-texlive-2012-in-ubuntu-12-04-lts/
+% Il manuale del pacchetto pgfornament è disponibile qui:
+% http://altermundus.com/pages/downloads/packages/pgfornament/ornaments.pdf
+% L'unica imprecisione del manuale di pgfornament \`e che il pacchetto è sempre chiamato ``ornament'' invece che ``pgfornament''.
+% Il pdf creato con questa serie di 7 file \`e la versione che abbiamo usato per il nostro matrimonio. A seconda delle letture e delle formule
+% scelte per il rito, il libretto della vostra messa potr\`a differire in maniera significativa da questo. Questo \`e solo una (si spera utile)
+% guida per voi! Per la scelta completa di tutte le letture e le formule del rito, vi rimandiamo direttamente al libretto della messa degli sposi,
+% disponibile in ogni parrocchia cattolica. Alcune parti del rito sono nuove in italiano e non esiste ad oggi (Giugno 2015) una traduzione ufficiale. Quindi
+% nella versione inglese alcune parti sono tradotte da noi. Se vi serve la versione inglese, controllate se \`e uscita una traduzione ufficiale!
+%%%
+% This group of 7 .tex files was created in June 2015 by Elisa Davoli and Matteo Tommasini for their wedding.
+% Use it freely for your wedding. If you want to redistribuite your changes to this code, please cite
+% blognotes.matteotommasini.altervista.org/latex-matrimonio as a reference
+% The license is the standard CC-BY (you can copy, distribute and make derivative works based on this work,
+% provided that you give credit to this blog for the original work).
+% The entire code is provided ``as it is'', without any warranty (in our case it worked perfectly!).
+% The compiled pdfs (single and double page) can be downloaded from the same webpage mentioned above.
+% The only package that is used here and that is not part of a standard LaTeX distribution is the package pgfornament (instructions in the file n. 1).
+% A good guide for the installation of pgfornament in debian/ubuntu/etc is the following one:
+% https://toihoctap.wordpress.com/2013/02/24/install-package-pgfornament-for-texlive-2012-in-ubuntu-12-04-lts/
+% You can download the manual of the package pgfornament from here:
+% http://altermundus.com/pages/downloads/packages/pgfornament/ornaments.pdf
+% The only error of the pgfornament manual is the fact that the package is always refered to as ``ornament'' instead of ``pgfornament''.
+% The pdf created from this series of 7 files is the version that we used for our wedding. Depending on the lectures, the gospel and the different
+% parts of the rite that you can choose, your booklet can vary significantly from this one. This booklet is only a (hopefully useful) guide for you!
+% For the complete choices of lectures and parts of the rite, please refer directly to the booklet of the mass with wedding that you can find in any
+% catholic parish. In June 2015 some parts of the rite were new in Italian, and not yet officially translated in English, so we translated them. If you
+% need the English version of the booklet, please check if the official translation is already out.
+
+\documentclass[11pt]{book}
+\usepackage{etoolbox} % package needed for the toggle commands below
+
+\newtoggle{bookletprinting} % pagina doppia (versione finale) o pagina singola (debug version)
+\newtoggle{debugmode} % debug mode on or off
+\newtoggle{pgfornamentinstalled} % pacchetto pgfornament installato sul vostro computer oppure no
+\newtoggle{italianlanguage} % lingua italiana
+\newtoggle{englishlanguage} % lingua inglese
+
+% CAMBIATE I VALORI (true/false) DEI SEGUENTI TOGGLE A VOSTRO PIACIMENTO.
+%%%
+% PLEASE CHANGE THE VALUES (true/false) OF THE NEXT TOOGLES IF YOU NEED TO.
+
+\toggletrue{bookletprinting} % opzioni: \toggletrue per l'impaginazione a libretto (booklet), \togglefalse per l'impaginazione a pagina singola
+% l'opzione true deve essere usata solo quando avete gi\`a sistemato tutti i canti, le letture e le formule del rito. Prima vi conviene usare
+% l'opzione false. Il risultato non \`e perfetto nella pagina, ma \`e pi\`u comodo da usare quando un testo \`e diviso su pi\`u pagine.
+%%%
+% Options: \toggletrue for printing a booklet, \togglefalse in order to have a pdf with one page per sheet (``single page'' mode). You should use the
+% option \toggletrue only after having written all the songs, the lectures, etc. Before that it is much simpler to use the option \togglefalse
+
+% La seconda pagina della versione ``booklet'' \`e intenzionalmente bianca, in modo tale da avere il testo che
+% cominci sulla pagina destra e l'ultima pagina bianca. Questo equivale a 2 pagine bianche nella versione ``a pagina singola'' (la seconda e la penultima).
+% Se le pagine totali della versione ``a pagina singola'' non sono divisibili per 4, allora avrete alcune pagine bianche extra. Per capire quali sono le
+% pagine bianche extra, \`e conveniente usare la modalit\`a di debug qui sotto.
+%%%
+% The second page of the ``booklet'' version is blank on purpose: in this way the text starts on a page on the right and the last page is blank. This
+% is equivalent to having 2 white pages in the version ``single page'' (the second one and the second last one). If the total number of pages
+% in the ``single page'' mode is not divisible by 4, you will have some more blank pages. If you need to understand which are the extra blank pages,
+% you should use the debug mode below
+
+\togglefalse{debugmode} % opzioni: true: aggiunge la scritta ``PAGINA LASCIATA VOLONTARIAMENTE BIANCA - NEL MAIN FILE CAMBIARE ``DEBUGMODE''
+% IN ``FALSE'' PRIMA DI STAMPARE DEFINITIVAMENTE IL LIBRETTO!'' sulla seconda e sulla penultima pagina
+% false: crea solo la pagina bianca, senza scritte aggiuntive (usare questa versione per la stampa finale)
+%%%
+% options: true: it adds the text ``THIS PAGE IS INTENTIONALLY LEFT BLANK - IN THE MAIN FILE CHANGE ``DEBUGMODE''
+% TO ``FALSE'' BEFORE PRINTING THE FINAL VERSION OF THE BOOKLET!`` on the second and on the second last page
+% false: creates only a blank page, without additional text (use this version for the final printing)
+
+\togglefalse{pgfornamentinstalled} % opzioni: \toggletrue, se siete riusciti ad installare il pacchetto pgfornament,
+% \tooglefalse in caso contrario (tutti gli ornamenti che vedete nel pdf di esempio non saranno stampati).
+%%%
+% Options: \toogletrue if you managed to install the package pgfornament on your computer -
+% \tooglefalse on the opposite case (all the ornaments that you see in the sample pdf will not be printed).
+
+\togglefalse{italianlanguage} % opzioni: \toggletrue per la lingua italiana, \tooglefalse per non avere la lingua italiana
+%%%
+% Options: \toggletrue for the italian language, \tooglefalse for not having the italian language
+
+\toggletrue{englishlanguage} % opzioni: \toggletrue per la lingua inglese, \tooglefalse per non avere la lingua inglese.
+%%%
+% Options: \toggletrue for the english language, \tooglefalse for not having the english language
+
+% ATTENZIONE: ogni volta che compilate dovete scegliere solo una lingua tra italiano ed inglese!
+%%%
+% ATTENTION: every time that you compile, you have to choose only one language between Italian ans English!
+
+\ifboolexpr{togl{italianlanguage} and togl{englishlanguage}}
+% Se il test passa, allora entrambe le lingue sono state selezionate
+%%%
+% If the test is true, then both languages were selected
+{\begin{document} ATTENZIONE! HAI SELEZIONATO CONTEMPORANEAMENTE SIA L'ITALIANO SIA L'INGLESE. Nel main file devi scegliere due valori di verit\`a
+diversi per la lingua italiana e per la lingua inglese. Ritenta e sarai pi\`u fortunato :-) \\
+
+ATTENTION! YOU HAVE SELECTED BOTH ITALIAN AND ENGLISH AS A MAIN LANGUAGE. In the main file you have to select 2 different truth values for
+Italian and English. Try again and you'll have more luck :-)\end{document}}
+{\ifboolexpe{not (togl{italianlanguage} or togl{englishlanguage})}
+% Se questo test secondario passa, allora nessuna lingua era selezionata
+%%%
+% If this auxiliary test is true, then no language was selected
+ {\begin{document} ATTENZIONE! NON HAI SELEZIONATO NESSUNA LINGUA (ITALIANO O INGLESE). Nel main file devi scegliere true per la lingua italiana e false
+ per la lingua inglese, o viceversa. Ritenta e sarai pi\`u fortunato :-) \\
+
+ ATTENTION! YOU HAVE NOT SELECTED ANY LANGUAGE (ITALIAN OR ENGLISH). In the main file you have to select true for Italian and false for English,
+ or conversely. Try again and you'll have more luck :-)\end{document}}
+% Se tutti i test precedenti hanno fallito, allora abbiamo scelto un'unica lingua (italiano o inglese). Si comincia il codice principale
+%%%
+% If all the previous tests are negative, then we have chosen exactly one language (Italian or English). So we can start the main code
+ {
+ \input{2-first-preamble} % comprende i nomi degli sposi, del vescovo della diocesi, del papa,
+ % le risposte alla preghiera dei fedeli, alcuni colori modificabili facilmente, etc
+ %%%
+ % contains the name of the bride and groom, of the bishop, of the pope, the answers to the prayer of the faithful, some tweaks about colors, etc 
+ 
+ \input{3-second-preamble} % comprende la chiamata a tutti i pacchetti standard e al pacchetto ``extra'' pgfornament (se l'opzione \`e attiva),
+ % inoltre tutti i comandi definiti per i titoli, i capitelli iniziali, etc...
+ %%%
+ % This file pre-loads all the standard packages, the ``extra'' package pgfornament (if the corresponding option is true)
+ % and all the commands for the titles, the initials, etc.
+
+ % Il prossimo comando crea il pdf a pagina doppia (modalit\`a ``booklet'') o pagina singola (a seconda del valore del toogle ``bookletprinting'' definito sopra
+ % Se necessario, sostituire il numero ``36'' con il pi\`u piccolo intero divisibile per 4 e maggiore del numero di pagine del pdf a pagina singola.
+ % (assieme al pacchetto booklet, il comando \setpdftargetpages crea una prima copia provvisoria a pagina singola,
+ % poi usa questa per creare la copia finale a pagina doppia).
+ %%%
+ % The next command creates the pdf as a booklet or with one page per sheet, according to the value of the toggle ``bookletprinting'' defined above.
+ % If necessary, you will have to substitute the number ``36'' with the smallest integer divisible by 4 and bigger than the number of 
+ % the pages of the pdf when printed with the toggle ``impaginazione'' set to false above (together with the booklet packate, the command
+ % \setpdftargetpages firstly creates a temporary version with one page per sheet, then uses this in order to create the final copy).
+
+ \iftoggle{bookletprinting}
+  {\usepackage[print, 1to1]{booklet}\nofiles\pagespersignature{36}\begin{document}\setpdftargetpages}
+  {\begin{document}} 
+
+ % Il prossimo comando carica il fronte di copertina (quasi uguale per la versione italiana e per quella inglese)
+ %%%
+ % The next command loads the front page (almost the same for the Italian and the English version)
+ \input{4-front-cover}
+
+ % Il prossimo comando carica il file di testo principale per l'italiano oppure quello specifico per l'inglese
+ %%%
+ % The next comand loads the main file for the Italian or fot the English version
+ \iftoggle{italianlanguage}{\input{5-italian-text}}{}
+ \iftoggle{englishlanguage}{\input{6-english-text}}{}
+
+ % In questo file di esempio, il numero di pagine in modalit\`a ``single page'' \`e divisibile per 4
+ % senza dover far nient'altro (sia in versione italiana sia in versione inglese)
+ % Se il numero delle pagine in modalit\`a ``single page'' non \`e divisibile per 4, aggiungere qui di seguito alcune
+ % pagine bianche extra per arrivare ad un numero divisibile per 4.
+ % Per farlo basta togliere il commento da (alcune delle) righe seguenti.
+ %%%
+ % In this file the number of pages in the mode ``single page'' is divisible by 4
+ % without doing anything else (both in the Italian version and in the English version)
+ % If the number of pages is not divisible by 4, then you have to add some blank extra pages
+ % in order to get a number divisible by 4.
+ % In order to do that, you simply have to remove the comment from (some of) the next lines.
+
+ %\BlankPageOnPurpose{\iftoggle{italianlanguage}{Prima pagina extra inserita}{}\iftoggle{englishlanguage}{First extra page added}{}}
+ %\BlankPageOnPurpose{\iftoggle{italianlanguage}{Seconda pagina extra inserita}{}\iftoggle{englishlanguage}{Second extra page added}{}}
+ %\BlankPageOnPurpose{\iftoggle{italianlanguage}{Terza pagina extra inserita}{}\iftoggle{englishlanguage}{Third extra page added}{}}
+ 
+ \input{7-back-cover}
+ \end{document}
+} % Questo chiude la seconda espressione condizionale % This closes the second conditional form above
+} % Questo chiude la prima espressione condizionale % This closes the first conditional form above

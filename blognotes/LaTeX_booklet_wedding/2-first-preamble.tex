@@ -1,0 +1,70 @@
+% Nome degli sposi
+%%%
+% Name of the bride and groom
+\newcommand{\bride}{Elisa}
+\newcommand{\groom}{Matteo}
+
+% nome della santa della sposa e invocazione
+%%%
+% name of the patron saint of the bride and invocation
+\iftoggle{italianlanguage}
+  {\newcommand{\patronsaintofthebride}{\textrm{Sant'Elisa} & \textbf{prega per noi}}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\patronsaintofthebride}{\textrm{Saint Elisa} & \textbf{pray for us}}}{}
+
+% nome del santo dello sposo e invocazione
+%%%
+% name of the patron saint of the groom and invocation
+\iftoggle{italianlanguage}
+  {\newcommand{\patronsaintofthegroom}{\textrm{San Matteo} & \textbf{prega per noi}}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\patronsaintofthegroom}{\textrm{Saint Mathew} & \textbf{pray for us}}}{}
+
+% nome del santo/santa della chiesa e invocazione
+%%%
+% name of the patron saint of the church and invocation
+\iftoggle{italianlanguage}
+  {\newcommand{\patronsaintofthechurch}{\textrm{San Silvestro} & \textbf{prega per noi}}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\patronsaintofthechurch}{\textrm{Saint Sylvester} & \textbf{pray for us}}}{}
+
+% risposta alla preghiera dei fedeli
+%%%
+% answers for the prayers of the faithful
+\iftoggle{italianlanguage}
+  {\newcommand{\answerforprayers}{Ascoltaci, o Signore.}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\answerforprayers}{Lord, hear our prayer.}}{}
+
+% nome del vescovo della diocesi
+%%%
+% name of the bishop of the diocese
+\iftoggle{italianlanguage}
+  {\newcommand{\nameofbishop}{Carlo}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\nameofbishop}{Carlo}}{}
+  
+% nome del papa
+%%%
+% name of the pope
+\iftoggle{italianlanguage}
+  {\newcommand{\nameofpope}{Francesco}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\nameofpope}{Francis}}{}
+
+% colore per il titolo dei canti (compresi gli ornamenti a destra e a sinistra)
+%%%
+% color for the titles of the songs and for the ornaments on the left and right of such titles
+\def \songstitlecolor {black!60}
+
+% colore per i testi dei canti
+%%%
+% color for the text of the songs
+\def \textofsongcolor {black!80}
+
+% colore per il nome del celebrante, dell'assemblea, degli sposi, per il segno della croce,
+% per i capitelli nelle 2 letture e nel Vangelo, per gli header e per gli header su 2 linee
+%%%
+% Color fo the name of the celebrant, the assembly, the bride and the groom, the maltese cross,
+% the big initials for the 2 readings and the Gospel, for the headers and for the headers on 2 lines
+\def \maincolor {red}

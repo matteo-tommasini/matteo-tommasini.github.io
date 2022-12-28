@@ -1,0 +1,174 @@
+% Questo file crea il fronte di copertina (con piccole varianti dall'italiano all'inglese) e una prima pagina bianca
+%%%
+% This file creates the front cover (with small variants according to language chosen between Italian and English) and a white page
+
+\begin{titlepage}
+\thispagestyle{empty} % rimuove il numero di pagina dalla copertina % removes the number of page from the front cover
+
+\accanthis\selectfont
+
+\begin{tikzpicture}[remember picture, overlay]
+
+% Cambiando stampanti, cambia parecchio il modo in cui la carta viene caricata in macchina. Quindi cambia l'allineamento dei bordi.
+% Nelle pagine interne questo non si nota molto. Nel fronte di copertina, si nota parecchio perché i 4 ornamenti sono molto vicini
+% agli angoli. Dunque i parametri che seguono servono per adattarsi a questo genere di situazioni.
+% Prima di mandare in stampa 100 libretti o più, vi conviene fare alcune stampe preliminari (con la stampante che userete per la stampa definitiva!)
+% con vari parametri per assicurarsi che tutto sia allineato sul fronte e sul retro di copertina :-)
+%%%
+% Whenever you change from one printer to another, the margins are printed in (slightly) different ways.
+% In the internal pages this is not a big deal because the margins are very wide. On the contrary, in the front page the 4 ornaments
+% are very close to the borders, so you can spot immediately if something is not correct. Before printing 100 booklets or more,
+% you should print some preliminary versions with various parameters (with the printer that you'll use for the final printing),
+% in order to be sure that everything is aligned on the front and back cover :-)
+
+% \x: cambiare questo parametro per spostare in orizzontale tutta la prima di copertina TRANNE i 4 ornamenti negli angoli
+% \r: cambiare questo parametro per spostare in orizzntale SOLO i 4 ornamenti negli angoli
+% cambiando \x and \r coerentemente si ottiene una traslazione orizzontale di tutta la prima di copertina
+%%%
+% \x: change this parameter in order to move horizontally all the front page EXCEPT FOR the 4 ornaments in the corners
+% \r: change this parameter in order to move horizontally ONLY the 4 ornaments in the cornes
+% changing \x and \r of the same quantity, you get a horizontal translation of the whole front page
+\def \x {0.7}   \def \r {0.6}
+
+% \y: cambiare questo parametro per spostare in verticale tutta la prima di copertina TRANNE i 4 ornamenti negli angoli
+% \t: cambiare questo parametro per spostare in verticale SOLO i 4 ornamenti negli angoli
+% cambiando \y and \t coerentemente si ottiene una traslazione verticale di tutta la prima di copertina
+%%%
+% \y: change this parameter in order to move horizontally all the front page EXCEPT FOR the 4 ornaments in the corners
+% \t: change this parameter in order to move horizontally ONLY the 4 ornaments in the cornes
+% changing \y and \t of the same quantity, you get a horizontal translation of the whole front page
+\def \y {0.5}   \def \t {0.0}
+
+% se pgfornament \`e installato, disegna i 4 ornamenti negli angoli e l'ornamento sotto al nome della chiesa
+%%%
+% if pgfornament is installed, the next commant draws the 4 ornaments in the corners and the ornament below the name of the church
+\iftoggle{pgfornamentinstalled}
+{
+ \node [anchor=north west] at (-1.325+\r, 1.90+\t) {\color{red!50}\pgfornament[width=3cm]{63}};  % alto a sinistra
+ \node [anchor=north east] at (12.4+\r, 1.90+\t) {\color{red!50}\pgfornament[width=3cm,symmetry=v]{63}}; % alto a destra
+ \node [anchor=south west] at (-1.325+\r, -18.13+\t) {\color{red!50}\pgfornament[width=3cm,symmetry=h]{63}}; % basso a sinistra
+ \node [anchor=south east] at (12.4+\r, -18.13+\t) {\color{red!50}\pgfornament[width=3cm,symmetry=c]{63}}; % basso a destra
+ \node (B1_0) at (5.43+\x, -15+\y) {\pgfornament[width=5cm,symmetry=h]{75}}; % ornamento sotto il nome della chiesa
+}{}
+ 
+% data in italiano o in inglese
+%%%
+% date in Italian or in English
+\node (T0_1) at (5.43+\x, -0.5+\y)
+ {\Huge
+  {
+  \iftoggle{italianlanguage}{20 Giugno 2015}{}
+  \iftoggle{englishlanguage}{June 20th, 2015}{}
+  }
+ };
+
+% nomi degli sposi nella versione italiana
+%%%
+% names of the bride and groom in the Italian version
+\iftoggle{italianlanguage}
+    {
+    \node at (3.37+\x, -4.615+\y)
+     {
+     \textcolor{red!90}
+       {
+       \fontsize{2cm}{1em}\normalfont\ECFJD{\bride\,\,\,e}
+       }
+      };
+    \node (C2_2) at (8.5+\x, -8.615+\y)
+     {
+     \textcolor{red!90}
+       {
+       \fontsize{2cm}{1em}\normalfont\ECFJD{\groom}
+       }
+      };
+    }{}
+
+% nella versione italiana, se pgfornament \`e installato aggiunge gli ornamenti ai lati dei nomi degli sposi
+%%%
+% in the Italian version, if pgfornament is installed, the next command draws the ornaments on the left and right of the names of the bride and groom
+\ifboolexpr{togl{italianlanguage} and togl{pgfornamentinstalled}}
+    {
+     \node (A1_0) at (9.3+\x, -4.915+\y) {\pgfornament[width=4.5cm,symmetry=h]{73}};
+     \node (C2_0) at (1.6+\x, -8.615+\y) {\pgfornament[width=4.5cm,symmetry=v]{73}};
+    }{}
+    
+% nomi degli sposi nella versione inglese
+%%%
+% names of the bride and groom in the English version
+\iftoggle{englishlanguage}
+    {
+    \node at (3.37+\x, -4.315+\y)
+     {
+      \textcolor{red!90}
+       {
+       \fontsize{2cm}{1em}\normalfont\ECFJD{\bride\,\,\,}
+       }
+     };
+    \node at (5.43+\x, -6.455+\y)
+     {
+      \textcolor{red!90}
+       {
+       \fontsize{2cm}{1em}\normalfont\ECFJD{and}
+       }
+     };
+    \node (C2_2) at (8.5+\x, -9.215+\y)   
+     {
+      \textcolor{red!90}
+       {
+       \fontsize{2cm}{1em}\normalfont\ECFJD{\groom}
+       }
+     };
+     }{}
+
+% nella versione inglese, se pgfornament \`e installato aggiunge gli ornamenti ai lati dei nomi degli sposi
+%%%
+% in the Englis version, if pgfornament is installed, the next command draws the ornaments on the left and right of the names of the bride and groom
+\ifboolexpr{togl{englishlanguage} and togl{pgfornamentinstalled}}
+    {
+    \node (A1_0) at (9.3+\x, -4.315+\y) {\pgfornament[width=4.5cm,symmetry=h]{73}};
+    \node (C2_0) at (1.6+\x, -9.215+\y) {\pgfornament[width=4.5cm,symmetry=v]{73}};
+    }{}
+
+% nomi della chiesa e della citt\`a
+%%%
+% names of the church and of the city
+\node (B0_0) at (5.43+\x, -13+\y) {\Huge{Chiesa Beata Vergine dei poveri}};
+\node (B0_0) at (5.43+\x, -17+\y) {\Huge{Crevalcore}};
+
+\end{tikzpicture}
+
+\end{titlepage}
+
+% Questo finisce la prima di copertina
+%%%
+% This ends the front page
+
+% Selezione dei font
+%%%
+% Selection of the fonts
+\fontencoding{\encodingdefault}
+\fontfamily{\familydefault}
+\fontseries{\seriesdefault}
+\fontshape{\shapedefault}
+\selectfont
+
+% Il prossimo comando crea una pagina bianca (cos\`i il testo comincia su una pagina destra del libretto).
+% Una scritta aggiuntiva viene inserita in modalit\`a debug (vedi il file 3-second-preamble)
+%%%
+% The next command creates a blank page (so that the text starts on a right page of the booklet)
+% An additional text is inserted if the debug mode is on (see the file 3-second-preamble)
+\BlankPageOnPurpose{\iftoggle{italianlanguage}{Seconda di copertina}{}
+\iftoggle{englishlanguage}{Inside front cover}{}}
+
+% Da qui in poi comincia il testo vero e proprio
+%%%
+% From this point on, the body of the booklet starts
+
+% Mette il contatore delle pagine a 1 (seguendo la numerazione dalla copertina, questa sarebbe in realt\`a pagina 3)
+%%%
+% Sets the counter to 1 (following the numbering from the front page, this page would be page 3)
+\setcounter{page}{1}
+
+% Restituisce il comando al main, che lo restituisce alla versione italiana o alla versione inglese.
+%%%
+% Gives back the command to the main file, that gives it back to the Italian or to the English version. 

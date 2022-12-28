@@ -1,0 +1,410 @@
+\usepackage[utf8]{inputenc} % 5 pacchetti standard % 5 standard packages
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{indentfirst}
+\usepackage{graphicx} % per tagliare i margini dell'immagine sull'ultima di copertina % this is used for adjusting the margins on the back cover
+\usepackage[export]{adjustbox} % per aggiungere il bordo all'immagine sull'ultima di copertina % this is used for adding a border to the image on the back cover
+\usepackage{xcoffins} % per fare i titoli delle sezioni % this is used for creating the titles of the various section
+\usepackage{emerald} % per avere il font usato nella copertina per i nomi degli sposi % this is used for the font used for the bride and groom on the front page
+\usepackage{accanthis} % per avere \accanthis, font usato nella copertina per tutte le altre scritte % this is used for the font \accanthis, used for everything else in the front page
+\usepackage{harmony} % serve per avere \textsc, usato per il font secondario nei titoli delle letture % this is used for \textsc, used for the secondary font in the titles of the lectures
+\usepackage{pict2e} % per avere \textscm, usato per il font del celebrante, dell'assemblea e degli sposi % this is used for the font \textscm (for the celebrant, the bride and groom and the assembly)
+\usepackage{lettrine} % per fare le iniziali grandi nelle 2 letture e nel vangelo % for the big initials in the 2 lectures and in the gospel
+\usepackage{tikz} % per fare la copertina con tikzpicture % used for creating the front page with tikzpicture
+\usepackage{ifthen} % per passare facilmente dalla versione italiana a quella inglese e per passare da pagina singola a pagina doppia
+% used in order to switch from the Italian to the English version, and from the single page to the booklet version.
+
+\iftoggle{pgfornamentinstalled}
+{\usepackage{pgfornament}}{}  % per aggiungere gli ornamenti nella copertina e nei titoli dei canti % for adding the ornaments in the front page and in the songs
+
+% i prossimo comandi sistema i margini di stampa e la larghezza della pagina
+%%%
+% The next commands set up the printing margins and the width of the page
+\usepackage[paperwidth=210mm, paperheight=297mm, outer=44mm, inner=46mm]{geometry}
+\geometry{centering, nohead, width=108.5mm, height=170mm}
+
+\linespread{1.05} % interlinea a 1.05 % linespread set to 1.05
+
+% I prossimi comandi modificano il layout standard dei numeri e delle intestazioni di pagina in fanyhdr. Nell'ordine: si rimuovono tutti gli header e i
+% footer eventualmente presenti; si scrivono i numeri di pagina in grigio (black!70). A sinistra vanno le pagine pari
+% (Left-Even), a destra le pagine dispari (Right-Odd)
+%%%
+% The next commands modify the standard layout in fancyhdr. In this order: we remove all the headers and the footers that can be added by fanyhdr;
+% we write the page numbers in gray (black!70). On the Left we write the Even pages, on the Right we write the Odd pages.
+\usepackage{fancyhdr} \pagestyle{fancy}
+\fancyhead{} \cfoot{}
+\fancyfoot[LE, RO]{\textcolor{black!70}{\thepage}}
+
+% altri comandi utili % some other useful commands
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\leftmargini}{0em}
+\setlength{\parindent}{0pt}
+
+% Il prossimo comando crea il titolo delle canzoni. Il colore \`e creato con \songstitlecolor definito nel file 3-second-preamble
+%%%
+% The next command creates the title of songs. The color is taken from \songstitlecolor, defined in the file 3-second-preamble
+\newcommand{\titleofsong}[1]
+{\hspace{-5.5mm}
+\begin{tikzpicture}
+\iftoggle{pgfornamentinstalled}
+ {
+ \node at (-0.15, 0) {\textcolor{\songstitlecolor}{\pgfornament[width=1.5cm,symmetry=vh]{73}\hspace{2mm}
+ \phantom{\textrm{\textbf{#1}}}\hspace{2mm}
+ \pgfornament[width=1.5cm,symmetry=v]{73}}};
+ \node at (0, -0.05) {\textcolor{\songstitlecolor}{\textrm{\textbf{#1}}}};
+ }
+ % else:
+ {
+ \node at (0, 0) {\textcolor{\songstitlecolor}{\textrm{\,\,\,\,\,\textbf{#1}}}};
+ }
+\end{tikzpicture}\vspace{3mm}}
+
+% Il prossimo comando crea il testo delle canzoni (il colore \`e definito da \textofsongcolor, definito in 3-second-preamble)
+% Per creare righe bianche all'interno della canzone, usare il comando \newline\newline
+%%%
+% The next command creates the text of songs (the color is defined by \textofsongcolor, defined in 3-second-preamble)
+% In order to create blank lines in the song, use the command \newline\newline
+\newcommand{\textofsong}[1]{\textcolor{\textofsongcolor}{\textbf{#1}}}
+
+% Il prossimo comando crea una croce maltese nel colore \maincolor definito in 3-second-preamble
+%%%
+% The next command creates a maltese cross in the color \maincolor defined in 3-second-preamble
+\newcommand{\cross}{\textcolor{\maincolor}{{\footnotesize\maltese}}}
+
+% Il prossimo comando crea il nome del libro usate nelle letture e nel vangelo
+%%%
+% The next command creates the name of the book used for the lectures and for the gospel
+\newcommand{\nameofbook}[1]{{\bfseries#1}}
+
+% Il prossimo comando crea le iniziali grandi per le 2 letture e il Vangelo
+%%%
+% The next command creates the big initials for the 2 readings and for the gospel
+\newcommand{\biginitial}[2]{\lettrine[lines=3,nindent=0mm]{\textcolor{\maincolor}#1}{#2}}
+
+% Comando per le 2 letture. Parametro #1: libro lettura, parametro #2: capitolo e versetti, parametro #3: antifona
+%%%
+% Command for the 2 readings. Parameter #1: name of the book, parameter #2: chapter and verse, paremeter #3: antiphony
+\newcommand{\reading}[3] 
+{{\noindent\nameofbook{#1}\hspace{1em}
+{\small\textsc{(#2)}}
+\par\nobreak\smallskip\emph{#3}\\}}
+
+% Comando per il Vangelo. Paramentro #1: nome del Vangelo, parametro #2: capitolo e versetti, parametro #3: antifona
+%%%
+% Command for the Gospel. Parameter #1: name of the Gospel, parameter #2: chapter and verse, paremeter #3: antiphony
+\newcommand{\gospel}[3]
+{{\noindent{{\Large\scshape\textcolor{\maincolor}{\cross}}}
+\hspace{1mm}\nameofbook{#1}
+\hspace{1mm}
+{\small\textsc{(#2)}}\par\nobreak\smallskip
+\emph{#3}\\}}
+
+% Il prossimo blocco di comandi crea le basi per i titoli e i titoli su due righe
+%%%
+% The next bloc of commands creates the basis for the titles and titles over 2 lines 
+\NewCoffin\InitialFirstRow
+\NewCoffin\TextFirstRow
+\NewCoffin\LineFirstRow
+\NewCoffin\TextSecondRow
+\NewCoffin\LineSecondRow
+
+% Header su una sola linea. Parametro #1: iniziale del titolo, parametro #2: resto del titolo,
+% parametro #3: spostamento orizzontale della linea sottostante il titolo
+%%%
+% Header on a single line. Parameter #1: initial of the title, parameter #2: rest of the title;
+% parameter #3: horizontal displacement of the line below the title
+\newcommand{\onelineheader}[3]
+{
+ \SetHorizontalCoffin\InitialFirstRow{\normalfont\scalebox{2}{\Large\textcolor{\maincolor}{#1}}}
+ \SetHorizontalCoffin\TextFirstRow{\normalfont\scalebox{1}{\Large\textcolor{\maincolor}{\uppercase{#2}}}}
+ \SetHorizontalCoffin\LineFirstRow{\hspace{-#3}\rule[-1.5pt]{\dimexpr\textwidth-\CoffinWidth\InitialFirstRow+#3\relax}{0.6pt}}
+
+ \JoinCoffins\LineFirstRow[l,t]\TextFirstRow[l,b]
+ \JoinCoffins\LineFirstRow[l,b]\InitialFirstRow[r,b]
+
+ \noindent\TypesetCoffin\LineFirstRow
+ \vspace{5 mm}
+}
+
+% Header su una due lineee. Parametro #1: iniziale del titolo, parametro #2: resto della PRIMA riga del titolo,
+% parametro #3: spostamento orizzontale della linea sottostante il titolo, parametro #4: seconda riga del titolo
+%%%
+% Header on 2 lines. Parameter #1: initial of the title, parameter #2: rest of the FIRST line of the title;
+% parameter #3: horizontal displacement of the line below the title, parameter #4: second line of the title
+\newcommand{\twolinesheader}[4]
+{
+ \SetHorizontalCoffin\InitialFirstRow{\normalfont\scalebox{2}{\Large\textcolor{\maincolor}{#1}}}
+ \SetHorizontalCoffin\TextFirstRow{\normalfont\scalebox{1}{\Large\textcolor{\maincolor}{\uppercase{#2}}}}
+ \SetHorizontalCoffin\LineFirstRow{\hspace{-#3}\rule[-1.5pt]{\dimexpr+\CoffinWidth\TextFirstRow+#3\relax}{0.6pt}}
+
+ \JoinCoffins\LineFirstRow[l,t]\TextFirstRow[l,b]
+ \JoinCoffins\LineFirstRow[l,b]\InitialFirstRow[r,b]
+
+ \SetHorizontalCoffin\TextSecondRow{\normalfont\scalebox{1}{\Large\textcolor{\maincolor}{\uppercase{#4}}}}
+ \SetHorizontalCoffin\LineSecondRow{\rule[-1.5pt]{\dimexpr\textwidth\relax}{0.6pt}}
+
+ \JoinCoffins\LineSecondRow[l,t]\TextSecondRow[l,b]
+
+ \noindent\TypesetCoffin\LineFirstRow
+
+ \vspace{4 mm}
+
+ \noindent\TypesetCoffin\LineSecondRow
+ \vspace{5 mm}
+}
+
+% Header secondario: scrive il titolo in \maincolor e in font largo
+%%%
+% Secondary header: it writes the title in \maincolor and in large font
+\newcommand{\secondaryheader}[1]{{\Large\textcolor{\maincolor}{#1}}\par\medskip\vspace{5mm}}
+
+% Il prossimo comando scrive ``Celebrante/Celebrant - '' in \maincolor e grassetto, solo per la prima volta in cui il celebrante parla, poi aggiunge il testo  
+%%%
+% The next command writes ``Celebrante/Celebrant - '' in \maincolor and bold, only for the first time when the celebrant speaks, then it adds the text
+\iftoggle{italianlanguage}
+  {\newcommand{\Celebrantbeginning}{{\textcolor{\maincolor}{\textbf{Celebrante} - }}}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\Celebrantbeginning}{{\textcolor{\maincolor}{\textbf{Celebrant} - }}}}{}
+
+% Il prossimo comando scrive ``Assemblea/Assembly - '' in \maincolor e grassetto, solo per la prima volta in cui l'assemblea parla,
+% poi aggiunge il testo in grassetto
+%%%
+% The next command writes ``Assemblea/Assembly - '' in \maincolor and bold, only for the first time when the celebrant speaks,
+% then it adds the text in bold
+\iftoggle{italianlanguage}
+  {\newcommand{\Assemblybeginning}[1]{{\textcolor{\maincolor}{\textbf{Assemblea} - }}{\textbf{#1}}}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\Assemblybeginning}[1]{{\textcolor{\maincolor}{\textbf{Assembly} - }}{\textbf{#1}}}}{}
+
+% Il prossimo comando scrive ``C - '' in \maincolor e grassetto
+%%%
+% The next command writes ``C - '' in \maincolor and bold
+\newcommand{\Celebrant}{{\textcolor{\maincolor}{\textbf{C} - }}}
+
+% Il prossimo comando scrive ``A - '' in \maincolor e grassetto, poi aggiunge il testo in grassetto
+%%%
+% The next command writes ``A - '' in \maincolor and bold, then it adds the text
+\newcommand{\Assembly}[1]{{\textcolor{\maincolor}{\textbf{A} - }}{\textbf{#1}}}
+
+% Il prossimo comando scrive il nome della sposa in \maincolor e grassetto
+%%%
+% The next command writes the name of the bride in \maincolor and bold
+\newcommand{\bridesym}{{\textcolor{\maincolor}{\textbf{\bride} - }}}
+
+% Il prossimo comando scrive il nome dello sposo in \maincolor e grassetto
+%%%
+% The next command writes the name of the groom in \maincolor and bold
+\newcommand{\groomsym}{{\textcolor{\maincolor}{\textbf{\groom} - }}}
+
+% Il prossimo comando scrive il nome degli sposi in \maincolor e grassetto
+%%%
+% The next command writes the names of bride and groom in \maincolor and bold
+\iftoggle{italianlanguage}
+  {\newcommand{\brideandgroomsym}{{\textcolor{\maincolor}{\textbf{\bride{} e \groom} - }}}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\brideandgroomsym}{{\textcolor{\maincolor}{\textbf{\bride{} and \groom} - }}}}{}
+
+% Il prossimo comando scrive il ritornello in corsivo, preceduto da ``Rit:'' in italiano o da ``Chorus:'' in inglese
+%%%
+% Then next command writes ``Rit:'' in Italian or ``Chorus:'' in English, then it adds the refrain in emphatic, 
+\iftoggle{italianlanguage}
+  {\newcommand{\refrain}[1]{Rit: \emph{#1}}}{}
+\iftoggle{englishlanguage}
+  {\newcommand{\refrain}[1]{Chorus: \emph{#1}}}{}
+
+
+% I prossimi comandi creano una pagina bianca (con eventuale scritta in modalit\`a debug)
+%%%
+% The next commands create a blank page (with an additional text when the debugmode is on)
+\newcommand{\BlankPageOnPurpose}[1]
+{
+\thispagestyle{empty} % rimuove il numero sulla seconda di copertina % removes the number from the second page
+% In modalit\`a debug aggiunge un warning alla pagina bianca. Altrimenti stampa solo una pagina bianca
+%%% 
+% If the debugmode is on, it adds a warning to the white page. Otherwise it only prints a blank page.
+\phantom{.}
+\iftoggle{debugmode}
+ {
+  \vspace{6cm}
+  \iftoggle{italianlanguage}
+  {#1.\newline\newline
+  PAGINA LASCIATA VOLONTARIAMENTE BIANCA.\newline\newline
+  NEL MAIN FILE, CAMBIARE ``DEBUGMODE'' IN ``FALSE''\newline\newline
+  PRIMA DI STAMPARE DEFINITIVAMENTE IL LIBRETTO!}{}
+  \iftoggle{englishlanguage}
+  {#1.\newline\newline
+  THIS PAGE IS INTENTIONALLY LEFT BLANK.\newline\newline
+  IN THE MAIN FILE, CHANGE ``DEBUGMODE'' TO ``FALSE''\newline\newline
+  BEFORE PRINTING THE FINAL VERSION OF THE BOOKLET!}{}
+ }{}
+\newpage
+} 
+
+% TUTTE LE CANZONI USATE SONO ELENCATE QUI (invece che nei file 5-italian-text e 6-english-text). La ragione di questo fatto \'e che anche nella versione
+% inglese abbiamo inserito i canti quasi sempre in italiano, aggiungendo solo una traduzione del titolo.
+%%%
+% ALL THE SONGS USED IN THE BOOKLET ARE LISTED HERE (instead of being in the files 5-italian-text e 6-english-text). We chose this system because
+% also in the English version we put most of the songs in Italian, with only a translation of the title. 
+   
+% ``Vieni dal Libano''
+\def \songA {Vieni dal Libano, mia sposa, vieni dal Libano, vieni!\\
+Avrai per corona le cime dei monti, le alte vette dell'Hermon.\\
+Tu m'hai ferito, ferito il cuore, o sorella, mia sposa.\\
+Vieni dal Libano, mia sposa, vieni dal Libano, vieni!\newline\newline
+\refrain{Cercai l'amore dell'anima mia,\\
+lo cercai senza trovarlo.\\
+Trovai l'amore dell'anima mia,\\
+l'ho abbracciato e non lo lascer\`o mai.}\newline\newline
+Alzati in fretta, mia diletta, vieni colomba, vieni!\\
+L'estate ormai \`e gi\`a passata, il grande sole \`e cessato.\\
+I fiori se ne vanno dalla terra, il tempo dell'uva \`e venuto.\\
+Alzati in fretta, mia diletta, vieni colomba, vieni!\newline\newline
+Io appartengo al mio diletto, ed egli \`e tutto per me.\\
+Vieni, usciamo alla campagna, dimoriamo nei villaggi.\\
+Andremo all'alba nelle vigne, vi raccoglieremo i frutti.\\
+Io appartengo al mio diletto, ed egli \`e tutto per me.\newline\newline
+Come sigillo sul tuo cuore, come sigillo sul braccio,\\
+ch\`e l'amore \`e forte come la morte, e l'acque non lo spegneranno.\\
+Dare per esso tutti i beni della casa, sarebbe disprezzarlo.\\
+Come sigillo sul tuo cuore, come sigillo sul braccio.}
+
+% ``Gloria'' in Italiano % ``Glory'' in Italian (English follows)
+\def \songB {\refrain{Gloria, gloria a Dio, gloria, gloria nell'alto dei cieli,\\
+pace in terra agli uomini di buona volont\`a. Gloria!}\newline\newline
+Noi ti lodiamo, ti benediciamo, ti adoriamo, glorifichiamo te,\\
+ti rendiamo grazie per la tua immensa gloria.\\
+Signore Dio, gloria! Re del cielo, gloria!\\
+Dio Padre, Dio onnipotente, gloria!\newline\newline
+Signore, Figlio unigenito, Ges\`u Cristo,\\
+Signore, Agnello di Dio, Figlio del Padre,\\
+tu che togli i peccati del mondo,\\
+abbi piet\`a di noi;\\
+tu che togli i peccati del mondo,\\ 
+accogli la nostra supplica;\\
+tu che siedi alla destra del Padre,\\
+abbi piet\`a di noi.\newline\newline
+Perch\'e tu solo il Santo, il Signore,\\
+tu solo l'Altissimo, Cristo Ges\`u,\\
+con lo Spirito Santo nella gloria del Padre.}
+
+% ``Glory'' in English
+\def \songBB {Glory to God in the highest,\\
+and on earth peace to people of good will.\\
+We praise you, we bless you,\\
+we adore you, we glorify you,\\
+we give you thanks for your great glory,\\
+Lord God, heavenly King, O God, almighty Father.\\
+Lord Jesus Christ, Only Begotten Son,\\
+Lord God, Lamb of God, Son of the Father,\\
+you take away the sins of the world,\\
+have mercy on us;\\
+you take away the sins of the world,\\
+receive our prayer;\\
+you are seated at the right hand of the Father,\\
+have mercy on us.\\
+For you alone are the Holy One, you alone are the Lord,\\
+you alone are the Most High, Jesus Christ,\\
+with the Holy Spirit, in the glory of God the Father. Amen.}
+
+% ``Segni del tuo amore''
+\def \songC {Mille e mille grani nelle spighe d'oro\\
+mandano fragranza e danno gioia al cuore\\
+quando, macinati, fanno un pane solo:\\
+pane quotidiano, dono tuo, Signore.\newline\newline
+\refrain{Ecco il pane e il vino, segni del tuo amore.\\
+Ecco questa offerta, accoglila Signore:\\
+tu di mille e mille cuori fai un cuore solo,\\
+un corpo solo in te\\
+e il Figlio tuo verr\`a, vivr\`a\\
+ancora in mezzo a noi.}\newline\newline
+Mille grappoli maturi sotto il sole,\\
+festa della terra, donano vigore,\\
+quando da ogni perla stilla il vino nuovo:\\
+vino della gioia, dono tuo, Signore.}
+
+% ``Santo'' in Italiano % ``Holy, Holy, Holy'' in Italian (English follows)
+\def \songD {Santo, Santo, Santo\\
+il Signore Dio dell'universo,
+Santo, Santo.\\
+I cieli e la terra sono pieni della tua gloria.\\
+Osanna nell'alto dei cieli.\\
+Osanna nell'alto dei cieli.\\
+Santo, Santo, Santo\\
+il Signore Dio dell'universo,\\
+Santo, Santo.\\
+I cieli e la terra sono pieni della tua gloria.\\
+Benedetto colui che viene\\
+nel nome del Signore.\\
+Osanna nell'alto dei cieli.\\
+Osanna nell'alto dei cieli.\\
+Santo, Santo, Santo.}
+
+% ``Holy, Holy, Holy'' in English
+\def \songDD {Holy, Holy, Holy, lord God of hosts.\\
+Heaven and earth are full of your glory.\\
+Hosanna in the highest.\\
+Blessed is he who comes in the name of the Lord.\\
+Hosanna in the highest.}
+
+% ``Pace sia, pace a voi''
+\def \songE {\refrain{Pace sia, pace a voi, la tua pace sar\`a\\
+sulla terra com'\`e nei cieli.\\
+Pace sia, pace a voi, la tua pace sar\`a\\
+gioia nei nostri occhi, nei cuori.\\
+Pace sia, pace a voi, la tua pace sar\`a luce limpida nei pensieri.\\
+Pace sia, pace a voi, la tua pace sar\`a una casa per tutti.}\newline\newline
+``Pace a voi'' sia il tuo dono visibile,\\
+``Pace a voi'' la tua eredit\`a,\\
+``Pace a voi'' come un canto all'unisono,\\ che sale dalle nostre citt\`a.\newline\newline
+``Pace a voi'' sia un'impronta nei secoli,\\
+``Pace a voi'' segno d'unit\`a,\\
+``Pace a voi'' sia l'abbraccio tra i popoli,\\
+la tua promessa all'umanit\`a.}
+
+% ``Isaia 62''
+\def \songF {Io gioisco pienamente nel Signore,\\
+la mia anima esulta nel mio Dio.\\
+Mi ha rivestito delle vesti di salvezza,\\
+mi ha avvolto con il manto della giustizia.\\
+Come uno sposo che si cinge il diadema,\\
+come una sposa che si adorna di gioielli.\\
+Come la terra fa germogliare i semi,\\
+cos\`i il Signore far\`a germogliare la giustizia.\newline\newline
+\refrain{Nessuno ti chiamer\`a pi\`u ``abbandonata''\\
+n\'e la tua terra sar\`a pi\`u detta ``devastata'',\\
+ma tu sarai chiamata ``mio compiacimento''\\
+e la tua terra ``sposata''\\
+perch\'e di te si compiacer\`a il Signore\\
+e la tua terra avr\`a uno sposo.}\newline\newline
+Per amore di Sion non mi terr\`o in silenzio,\\
+per amore di Gerusalemme non mi dar\`o pace\\
+finch\'e non sorga come stella la sua giustizia,\\
+la sua salvezza non risplenda come lampada.\\
+Allora i popoli vedranno la tua giustizia, tutti i re la tua gloria.\\
+Ti si chiamer\`a con un nome nuovo\\
+che la bocca del Signore avr\`a indicato.\newline\newline
+Sarai una magnifica corona nella mano del Signore,\\
+un diadema regale nella palma del tuo Dio.\\
+S\`i, come un giovane sposa una vergine,\\
+cos\`i ti sposer\`a il tuo creatore.\\
+Come gioisce lo sposo per la sposa,
+cos\`i per te gioir\`a il tuo Dio.}
+
+% ``In eterno canter\`o''
+\def \songG {\refrain{In eterno canter\`o: Alleluia!\\
+Tu sei fedelt\`a Signor, tu eterna novit\`a.}\newline\newline
+Sei parola amica, sei perdono, sei lealt\`a,\\
+tu misecordia, tu giustizia, libert\`a.\\
+Dona al cuore che ti cerca la tua novit\`a,\\
+voce nuova per credere all'amore.\newline\newline
+Provvidenza amica, sei ricchezza, sei lealt\`a,\\
+tu sostegno saldo, tu pazienza, libert\`a.\\
+Dona al cuore che in te spera la tua novit\`a,\\
+nuovo abbraccio per credere all'amore.\newline\newline
+Pace che trasforma, luce limpida, lealt\`a,\\
+Tu calore amico, accoglienza, libert\`a.\\
+Dona ai cuori che ti cercano la novità,\\
+sguardi nuovi, per credere all'amore.}

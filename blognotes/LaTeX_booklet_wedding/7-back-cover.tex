@@ -1,0 +1,41 @@
+% Il prossimo comando crea una pagina bianca (cos\`i il retro di copertina \`e su una pagina divisibile per 4).
+% Una scritta aggiuntiva viene inserita in modalit\`a debug (vedi il file 3-second-preamble)
+%%%
+% The next command creates a blank page (so that the back cover is on a page divisible by 4)
+% An additional text is inserted if the debug mode is on (see the file 3-second-preamble)
+\BlankPageOnPurpose{\iftoggle{italianlanguage}{Terza di copertina}{}
+\iftoggle{englishlanguage}{Inside back cover}{}}
+
+\newgeometry{outer=47mm, inner=40mm}
+
+\thispagestyle{empty}
+
+\phantom{.}
+
+\vspace{1.5cm}
+
+% Il prossimo comando ``cfbox'' crea una cornice attorno all'immagine (prima si seleziona il colore della cornice,
+% poi lo spessore della cornice, poi lo spessore bianco tra il bordo dell'immagine e la cornice).
+% Il comando ``trim'' ritaglia ogni immagine jpg prima da sinistra, poi dal basso, poi da destra, poi dall'alto
+%%%
+% The next command ``cfbox'' creates a frame around the image (first you select the color of the frame,
+% then the thickness of the frame, then the thickness of the white space between the image and the frame).
+% The command ``trim'' cuts any jpg image firstly from the left, then from the bottom, then from the right, then from the top.
+\begin{center}
+\begin{figure}[h]
+\includegraphics[width=2cm, cfbox=red!50 0.5pt 0pt, trim={35cm 7cm 35.5cm 0cm}, clip, width=11.8cm]{8-our-church.jpg}
+\end{figure}
+\end{center}
+
+\vspace{-1cm}
+
+% Il prossimo comando aggiunge i ringraziamenti in italiano o in inglese sul retro di copertina
+%%%
+% The next command adds some acknowledgements in Italian or in English on the back cover
+\iftoggle{italianlanguage}{\vspace{3mm}Grazie alle nostre famiglie, agli amici, a don Adriano, a tutti i ministri,\\
+ ai ministranti e al Coro San Silvestro della parrocchia di Crevalcore.}{}
+\iftoggle{englishlanguage}{Special thanks to our families, to our friends, to don Adriano, to all\\
+ the churchmen, to the ministers and to the Choir ``Saint Sylvester''\\
+ of the parish of Crevalcore.}{}
+
+% At last, we're done! Enjoy your wedding!
