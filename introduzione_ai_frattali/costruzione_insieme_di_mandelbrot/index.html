@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang = "it">
+  <head>
+    <meta charset = "utf-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <title>Introduzione ai frattali - La costruzione dell'insieme di Mandelbrot</title>
+    <meta name = "keywords" content = "introduzione ai frattali, fiocco di neve di Von Koch, autosomiglianza; dimensione frattale, numeri complessi, insieme di Mandelbrot, Cantor, Sierpinski">
+    <meta name = "author" content = "Matteo Tommasini">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href = "https://matteotommasini.com/introduzione_ai_frattali/style/style.css">
+
+    <!-- MathJax configuration (for rendering math with LaTeX syntax) -->
+    <script type = "text/x-mathjax-config">
+      MathJax.Hub.Config({
+                tex2jax:
+                  {inlineMath: [['$','$'], ['\\(','\\)']],
+                  preview: "none"},
+                CommonHTML:
+                  {scale: 110},
+                styles:
+                  {"MathJax_Preview .abstract":
+                    {"background-color": "#FCA311",
+                    "font-size": "90%"},
+                  ".MathJax_Preview":
+                    {color: "#FCA311"}}});
+    </script>
+
+    <script src = "https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id = "MathJax-script" async src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. 
+        Please <a href = "#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <header>
+      <img 
+      class = "title-image" 
+      src = "https://matteotommasini.com/introduzione_ai_frattali/img/titles/costruzione_insieme_mandelbrot.gif" 
+      alt = "La costruzione dell'insieme di Mandelbrot">
+    </header>
+
+    <div id = "main">
+      <nav>
+        <ul>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/">Home</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/introduzione/">Introduzione</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/le_iterazioni_geometriche/">Le iterazioni geometriche</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/mandelbrot_e_i_frattali/">Mandelbrot e i frattali</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/numeri_complessi/">L'insieme di Mandelbrot</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/modelli_frattali_di_oggetti_naturali/">Modelli frattali di oggetti naturali</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/strutture_frattali_naturali/">Strutture frattali naturali</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/conclusione/">Conclusione</a></li>
+        </ul>
+
+        <ul>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/bibliografia/">Bibliografia e fonti iconografiche</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/link_utili/">Link utili</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/programmi/">Programmi</a></li>
+          <li><a href = "https://matteotommasini.com/introduzione_ai_frattali/autore/">L'autore</a></li>
+        </ul>
+      </nav>
+      <article>
+        <div class = "internal-navigation-top">
+          <a href = "https://matteotommasini.com/introduzione_ai_frattali/">
+            <div class = "navigation-home"></div>
+          </a>  
+          <a href = "https://matteotommasini.com/introduzione_ai_frattali/numeri_complessi">
+            <div class = "navigation-up"></div>
+          </a>
+          <a href = "https://matteotommasini.com/introduzione_ai_frattali/insieme_di_mandelbrot/">
+            <div class = "navigation-next"></div>
+          </a>  
+        </div>
+
+        <div class = "article-with-top-and-bottom-navigation">
+          <p>
+            Consideriamo la successione di numeri complessi:
+          </p>
+          <p>
+            $$z_{n+1} = (z_n)^2 + c
+          </p>
+          <p>
+            per $n = 0, 1, 2, 3, \cdots $ e con $z_0 = 0$ e per ogni $c = a + ib$ (cioè per ogni punto del piano complesso $\mathbb{C}$).
+          </p>
+          <p>
+            Per $n = 0$, abbiamo per definizione $z_0 = 0$.
+          </p>
+          <p>
+            Per $n = 1$, $z_1 = c$.
+          </p>
+          <p>
+            Per $n = 2$, $z_2 = c^2 + c$.
+          </p>
+          <p>
+            Per $n = 3$, $z_3 = (c^2 + c)^2 + c = c^4 + 2 c^3 + c^2 + c$.
+          </p>
+          <p>
+            Per $n = 4$, $z_4 = (c^4 + 2 c^3 + c^2)^2 + c = c^8 + 4 c^7 + 6 c^6 + 4 c^5 + c^4 + c$.
+          </p>
+          <p>
+            Dunque, sostituendo $c = a + bi$ si ottiene:
+          </p>
+          <p>
+            Per $n = 0$, $z_0 = 0$.
+          </p>
+          <p>
+            Per $n = 1$, $z_1 = a + ib$.
+          </p>
+          <p>
+            Per $n = 2$, $z_2 = (a + ib)^2 + a + ib = (a^2 - b^2 + a) + i * (-2ab).
+          </p>
+          <p>
+            Per $n = 3$, $z_3 = (a + ib)^4 + 2 (a + ib)^3 + (a + ib)^2 + a + ib = \cdots$.
+          </p>
+          <p>
+            Eseguendo all'infinito questa procedura otteniamo una successione di
+            numeri complessi in modo analogo alla successione di forme geometriche ottenute
+            tramite iterazioni; anche in questo caso, infatti,<b><i> si considera un valore
+            iniziale c a cui si applica un funzione e il cui risultato viene considerato
+            come nuovo valore iniziale, e così all'infinito.</i></b>
+          </p>
+          <p>
+            Possiamo schematizzare quanto detto in questo modo:
+          </p>
+          
+          <img src = "images/costru1.jpg" width="369" height="119">
+          
+          <p>
+            Secondo la teoria delle iterazioni dei numeri complessi, 
+            "<b><i>le iterazioni porteranno le dimensioni di $z$ all'infinito, 
+            se e solo se in qualche stadio del processo $z$ raggiunge un
+            modulo maggiore o uguale a $2$</i>.</b>"
+            Dunque:
+          </p>
+          <ul>
+            <li>
+              se $|z_n| >= 2$ per un qualche $n$, allora la successione è divergente
+            </li>
+            <li>
+              se $|z_n| < 2$ per ogni $n$, allora la successione è convergente
+            </li>
+          </ul>
+          
+          <p>
+            La definizione che abbiamo dato è imprecisa perch� si
+            parla di un "qualche stadio" del processo iterativo, dunque un valore 
+            $z_n$ potrebbe avere un valore di $|z|$ minore di $2$ al $100$-esimo passaggio e superare
+            tale valore al $101$-esimo. Un numero massimo per ottenere la precisione assoluta
+            non esiste anche se molti autori propongono un numero limite di $1000$ iterazioni
+            (è chiaro che, comunque, il numero non può essere infinito, dato che
+            disponiamo di un tempo finito per disegnare l'insieme).
+          </p>
+          <p>
+            A questo punto possiamo enunciare la definizione
+            dell'insieme di Mandelbrot data da Adrien Douady:
+          </p>
+          <p>
+            "<b><i>L'insieme di Mandelbrot $M$è l'insieme dei
+            valori complessi $c\in\mathbb{C}$ tali che, partendo dal valore iniziale 
+            $z_0 = 0$, la successione $z_n: z_n = z_{n-1}^2 + c$ si mantiene limitata (cioè
+            se $|z_n|< 2$): in questo caso il punto associato nel piano dei numeri complessi
+            è colorato in nero.</i></b>"
+          </p>
+          <p>
+            Se $|z_n|$ supera (o è uguale a) $2$ per un qualche $n$, allora il punto andrà molto
+            rapidamente verso l'infinito e ciò vuol dire che non appartiene all'insieme $M$.
+            A questo tipo di punti viene assegnato un colore basandosi su quante iterazioni
+            occorrono prima che $|z_n| >= 2$
+            (basandosi in sostanza sulla velocità con cui la successione $z_n$
+            diverge). Ad esempio, si assegna arbitrariamente il colore rosso ai punti per i
+            quali $|z_n|$ eccede il valore $2$ dopo $10$ iterazioni, giallo per i punti per i quali
+            $|z_n|$ è maggiore di $2$ dopo $100$ iterazioni, ... Eccetto per il colore nero, che
+            rappresenta l'insieme di Mandelbrot $M$ vero e proprio, per i punti esterni ad
+            esso i metodi di colorazione sono innumerevoli: solo tonalità di blu, solo
+            tonalità di rosso, tutti i colori, ...
+          </p>
+          <img src = "https://matteotommasini.com/introduzione_ai_frattali/img/content/Animationmandel.gif" width="430" height="432">
+          <p>
+            Qui sopra l'animazione mostra l'insieme di Mandelbrot a
+            successive iterazioni: si parte da $1$ iterazione (tutti i
+            punti del piano aventi $|z| < 2$, cioè tutti i punti del
+          cerchio avente centro nell'origine del piano e raggio $r = 2$, eccetto il bordo). 
+            Come si nota, man
+            mano che il numero di iterazioni aumenta, compaiono nuovi dettagli. Per ottenere
+            una buona qualità dell'immagine, occorrono almeno $100$-$200$ iterazioni, valore
+            che aumenta nel caso di ingrandimenti di particolari dell'insieme.
+          </p>
+          <p>
+            <b><a href = "https://matteotommasini.com/introduzione_ai_frattali/insieme_di_mandelbrot.htm">Esplora l'insieme di Mandelbrot</a></b>
+          </p>
+        </div>
+      
+        <div class = "internal-navigation-bottom">
+          <a href = "https://matteotommasini.com/introduzione_ai_frattali/programmi/">
+            <div class = "navigation-back"></div>
+          </a>
+          <a href = "https://matteotommasini.com/introduzione_ai_frattali/">
+            <div class = "navigation-home"></div>
+          </a>  
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      Copyleft Matteo Tommasini 2014 - 2022. Il materiale di questo sito è liberamente e gratuitamente usabile citando la fonte.
+    </footer>
+
+  </body>
+</html>
