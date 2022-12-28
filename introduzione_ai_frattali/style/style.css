@@ -160,6 +160,11 @@ We need to subtract any additional value for the internal-navigation (if present
 }
 
 .divisor {
-  border-image: url("https://matteotommasini.com/introduzione_ai_frattali/img/divisors/awillrul.gif") repeat;
-  border-image-width: 100% 0 100% 0; /* removes left and right borders, since there is no css property like border-left-image or similar properties */
+  border-image: url("https://matteotommasini.com/introduzione_ai_frattali/img/divisors/awillrul.gif") 50 round;
+  border-style: solid;
+  border-image-width: 10px 0 10px 0; /* removes left and right borders, since there is no css property like border-left-image or similar properties */
+  padding-bottom: 5px;
 }
+
+/* TO DO: when the horizontal space is not enough to show (on the same line) 3 navigation buttons,
+switch to a mobile view - see for example https://matteotommasini.com/introduzione_ai_frattali/autosomiglianza/ */
