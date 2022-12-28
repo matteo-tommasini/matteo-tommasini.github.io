@@ -124,3 +124,21 @@ footer {
 .navigation-up:hover {
   background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/up_hover.gif") no-repeat;
 }
+
+.internal-navigation-top,
+.internal-navigation-bottom {
+  display: block;
+  height: 40px;
+}
+
+.article-with-no-navigation {
+  min-height: 100vh;
+}
+
+.article-with-top-navigation {
+  min-height: calc(100vh - 40px);
+}
+
+.article-with-top-and-bottom-navigation {
+  min-height: calc(100vh - 80px);
+}
