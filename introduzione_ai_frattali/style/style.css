@@ -1,0 +1,126 @@
+/* basic flexbox template: https://www.quackit.com/html/templates/css_flexbox_templates.cfm with some tweaks */
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+}
+
+#main {
+  display: flex;  /* flex is used only for the couple of objects nav + article that are contained in #main */
+  min-height: calc(100vh - 90px - 40px);
+}
+
+#main > article {
+  flex: 1;
+}
+
+header, footer, article, nav {
+  padding: 1em;
+}
+
+header {
+  height: 90px;
+}
+
+footer {
+  height: 40px;
+}
+
+/* from here: copyleft Matteo Tommasini */
+
+body {
+  background-color: #EFF3F7;
+  background-image: url("https://matteotommasini.com/introduzione_ai_frattali/img/background/background_mandelbrot.jpg");
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: #6666CC;
+
+}
+
+a:hover {
+  color: #0060df;
+}
+
+a:visited {
+    color: #3b6cac;
+}
+
+nav {
+  margin-left: 10px;
+}
+
+nav > ul {
+  list-style-type: none;
+  padding: 0; /* removes default padding */
+  border: 5px double #494984;
+  margin-top: 0; /* removes in particular the default upper margin */
+}
+
+nav > ul > li {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+article {
+  line-height: 24px;
+  font-size: 18px;
+}
+
+footer {
+  padding: 10px;
+  border-top: 1px solid #494984;
+}
+
+.internal-navigation {
+  display: block;  
+}
+
+.navigation-home,
+.navigation-next,
+.navigation-back,
+.navigation-up {
+  width: 140px;
+  height: 40px;
+  display: inline-block;
+}
+
+.navigation-home {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/home.gif") no-repeat;
+}
+
+.navigation-home:hover {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/home_hover.gif") no-repeat;
+}
+
+.navigation-next {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/nex.gif") no-repeat;
+}
+
+.navigation-next:hover {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/next_hover.gif") no-repeat;
+}
+
+.navigation-back {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/back.gif") no-repeat;
+}
+
+.navigation-back:hover {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/back_hover.gif") no-repeat;
+}
+
+.navigation-up {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/up.gif") no-repeat;
+}
+
+.navigation-up:hover {
+  background: url("https://matteotommasini.com/introduzione_ai_frattali/img/navigation/up_hover.gif") no-repeat;
+}
