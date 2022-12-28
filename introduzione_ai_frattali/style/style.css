@@ -153,3 +153,8 @@ We need to subtract any additional value for the internal-navigation (if present
 .article-with-top-and-bottom-navigation {
   min-height: calc(100vh - var(--title-height) - var(--footer-height) - 2 * var(--internal-navigation-height));
 }
+
+.divisor {
+  border-image: url("https://matteotommasini.com/introduzione_ai_frattali/img/divisors/awillrul.gif") repeat;
+  border-image-width: 100% 0 100% 0; /* removes left and right borders, since there is no css property like border-left-image or similar properties */
+}
