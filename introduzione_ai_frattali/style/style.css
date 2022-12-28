@@ -1,5 +1,5 @@
 :root {
-  --title-height: 90px;
+  --header-height: 90px;
   --footer-height: 40px;
   --internal-navigation-height: 40px;
 }
@@ -17,7 +17,7 @@ body {
 
 #main {
   display: flex;  /* flex is used only for the couple of objects nav + article that are contained in #main */
-  min-height: calc(100vh - var(--title-height) - var(--footer-height));
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
 #main > article {
@@ -29,11 +29,11 @@ header, footer, article, nav {
 }
 
 header {
-  height: 90px;
+  height: var(--header-height);
 }
 
 footer {
-  height: 40px;
+  height: var(--footer-height);
 }
 
 /* from here: copyleft Matteo Tommasini */
@@ -138,20 +138,20 @@ footer {
   height: var(--internal-navigation-height);
 }
 
-/* the height of <article> is computed above as calc(100vh - var(--title-height) - var(--footer-height));
+/* the height of <article> is computed above as calc(100vh - var(--header-height) - var(--footer-height));
 We need to subtract any additional value for the internal-navigation (if present)
 */ 
 
 .article-with-no-navigation {
-  min-height: calc(100vh - var(--title-height) - var(--footer-height));
+  min-height: 100%;
 }
 
 .article-with-top-navigation {
-  min-height: calc(100vh - var(--title-height) - var(--footer-height) - var(--internal-navigation-height));
+  min-height: calc(100% - var(--internal-navigation-height));
 }
 
 .article-with-top-and-bottom-navigation {
-  min-height: calc(100vh - var(--title-height) - var(--footer-height) - 2 * var(--internal-navigation-height));
+  min-height: calc(100% - 2 * var(--internal-navigation-height));
 }
 
 .divisor {
