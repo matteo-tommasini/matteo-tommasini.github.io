@@ -70,7 +70,7 @@ h2 {
   font-size: 25px;
 }
 
-@media (max-width: 1060px) {
+@media (min-width: 840px) {  
   .mdl-cell--2-col, .mdl-cell--2-col-desktop.mdl-cell--2-col-desktop {
     width: 0% !important;
   }
@@ -79,7 +79,7 @@ h2 {
   }
 }
 
-@media (max-width: 1240px) {
+@media (min-width: 1240px) {
   .mdl-cell--2-col, .mdl-cell--2-col-desktop.mdl-cell--2-col-desktop {
     width: 8% !important;
   }
