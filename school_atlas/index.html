@@ -1,1 +1,173 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
 
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Elementary schools / atlas of Viennese schools</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Schulatlas">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
+    <link rel="stylesheet" href="MD_styles.css">
+    <link rel="stylesheet" href="school_atlas_styles.css">
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Elementary schools / <br>statistics of Viennese schools</span>
+        </div>
+      </header>
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <!--<div class="demo-crumbs mdl-color-text--grey-500">
+              Google &gt; Material Design Lite &gt; How to install MDL
+            </div>-->
+
+            <h1>Where do Viennese children continue their studies after attending a Volksshule?</h1>
+
+            <h2>A rough analysis using the data of Statistik Austria</h2>
+
+            <p>
+              The data in the table below are taken from the report of Statistik Austria for the year <b>2022/23</b>.
+            </p>
+
+            <br>
+            
+            <p>
+              Most of the tables and additional information from Statistik Austria are provided in the Report 
+              "Schule, Schulbesuch 2022/23" at 
+              <a target = _blank rel = "noopener" href = "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bildung/schulbesuch">this link</a>.
+            </p>
+            
+            <br>
+            
+            <p>
+              In the tables in that report there are plenty of interesting data about the number of children attending 
+              various types of schools, divided by Gemeinden (in Vienna: Bezirks), but I could not find any table listing 
+              where children continue their studies (normally for the 5th class) after attending the various elementary schools 
+              (<i>Volksschulen</i>) in Vienna. These data are instead only provided in the 
+              <a target = _blank rel = "noopener" href = "https://www.statistik.at/atlas/schulen/">atlas at this link</a>, which is
+              however cumbersome to use since one has to click on every individual school to get this type of information.
+              The table below is generated using data from that atlas, but displaying them in a simpler form. 
+              It is likely that similar analysis have been done already
+              also by other people, I do not claim originality :-) and I would be happy to know about other similar attempts.
+            </p>
+
+            <br>
+            
+            <p>
+              The next report with the data of the school year 2023/24 is expected to be published on 29.11.2024; 
+              it is however not clear if the new data needed for generating the table below
+              will be automatically updated in the atlas at the same time, or only in the next few weeks. 
+              If I will have some time (and if the data are still available in the same format), I will update this website accordingly, 
+              but I cannot promise anything at the moment.
+            </p>
+
+            <br>
+            
+            <p>
+              Some short explanations about the table below:
+            </p>
+
+            <br>
+            
+            <p>
+              (1) In the atlas of Statistik Austria there are some movements of students listed as "&leq; 6"; 
+              in the actual data those movements are instead
+              all equal to zero, and the atlas is manually coded in order to display "&leq; 6" in these cases, 
+              even if this sounds completely useless. For this reason, I opted
+              for trusting the actual source of data and not their visual representation in the atlas: all these cases are treated as zero.
+            </p>
+
+            <br>
+            
+            <p>
+              (2) In the table below you can see some movements of students from some <i>Volksshulen</i> back again in 
+              <i>Volksschulen</i>. 
+              This is the case for the <i>Wiederholung der Schulstufe im gleichen Schultyp</i> (not necessarily in the same school).
+            </p>
+            
+            <br>
+
+            <p>
+              (3) Some schools with the exact same address appear twice in the data of Statistik Austria, hence also in the table below. 
+              This is most likely due to the fact that some Viennese schools switched in the last years
+              from a Halbtagsmodell to a Ganztagsschule, thus appearing as two different entities in the data of Statistik Austria.
+            </p>
+
+            <br>
+  
+            <p>
+              (4) The next table displays correctly only on a medium/large screen: either use your mobile phone in horizontal mode, 
+              or switch to a computer/tablet.
+            </p>
+            <!-- (3) Apart from the case (2), relevant for a registration in a 5th class are just the cases of the 
+            <i>Allgemein bildende höhere Schule</i> and of the <i>Neue Mittelschule / Hauptschule</i>. 
+            I am listing all types of schools just for completeness.
+            -->
+
+            <br><br>
+
+            <table id = "my_table">
+              <thead>
+                <tr id = "thead">
+                  <th>PLZ</th>
+                  <th class = "schule">Elementary school
+                  </th>
+                </tr>
+              </thead>
+              <tbody id = "tbody"></tbody>
+            </table>
+
+            <br><br>
+            
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <!-- <ul class="mdl-mini-footer--link-list">
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy and Terms</a></li>
+              <li><a href="#">User Agreement</a></li>
+            </ul>-->
+            Template: <a target = _blank rel = "noopener" href = "https://getmdl.io/templates/article/index.html">Material Design Lite</a>.
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script async defer src = "script.js"></script>
+  </body>
+</html>
