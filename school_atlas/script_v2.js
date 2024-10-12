@@ -328,6 +328,29 @@ function createRowForPLZ(PLZ, school_categories) {
 }
 
 function createRowForSchool(PLZ, school, school_categories) {
+  var char_limit = 25; // this is the maximum length of a string in order not to overflow the container of class "schule"
+  var description_in_blocks = [];
+  if (school.description.length > 25) {
+    var exploded = school.description.split(" ");
+    var current_block = "";
+    for (var i = 0; i < exploded.length; i++) {
+      var tentative_block = current_block + " " + exploded[i];
+      if (tentative_block.length > char_limit) {
+        description_in_blocks.push(current_block);
+        current_block = exploded[i];
+      }
+      else {
+        current_block = tentative_block;
+      }
+    }
+    // push also the last block to the array with all blocks
+    description_in_blocks.push(current_block);
+  }
+  else {
+    description_in_blocks = [school_description];
+  }
+
+  
   var tbody = document.getElementById("tbody");
 
   var tr = document.createElement("tr");
@@ -340,12 +363,16 @@ function createRowForSchool(PLZ, school, school_categories) {
   var td = document.createElement("td");
   td.classList.add("schule");
 
-  var text_node_1 = document.createTextNode(school.address);
-  var br = document.createElement("br");
-  var text_node_2 = document.createTextNode(school.description);
-  td.appendChild(text_node_1);
-  td.appendChild(br);
-  td.appendChild(text_node_2);
+  var text_node_address = document.createTextNode(school.address);
+  td.appendChild(text_node_address);
+  
+  for (var i = 0; i < description_in_blocks.length; i++) {
+    var br = document.createElement("br");
+    var text_node_description = document.createTextNode(description_in_blocks[i]);
+    td.appendChild(br);
+    td.appendChild(text_node_description);
+  }
+  
   tr.appendChild(td);
 
   for (const school_category in school_categories) {
