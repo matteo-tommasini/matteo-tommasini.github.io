@@ -92,6 +92,9 @@ h2 {
 @media (max-width: 840px) {
   .demo-content {
     padding: 80px 15px;
-    width: calc(100% - 30px);
   }
+}
+
+.demo-content {
+  width: calc(100% - 30px);
 }
