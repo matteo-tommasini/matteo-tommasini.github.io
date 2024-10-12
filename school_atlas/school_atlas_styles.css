@@ -74,7 +74,7 @@ h2 {
   .mdl-cell--2-col, .mdl-cell--2-col-desktop.mdl-cell--2-col-desktop {
     width: 0% !important;
   }
-  .mdl-cell--8-col, .mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
+  .mdl-cell.mdl-cell--8-col, .mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
     width: calc(100% -16px)!important;
   }
 }
