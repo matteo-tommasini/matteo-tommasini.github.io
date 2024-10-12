@@ -82,3 +82,8 @@ h2 {
   }
 }
 
+@media (max-width: 840px) {
+  .demo-content {
+    padding: 80px 15px;
+  }
+}
