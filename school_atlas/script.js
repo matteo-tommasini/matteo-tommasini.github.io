@@ -341,8 +341,10 @@ function createRowForSchool(PLZ, school, school_categories) {
   td.classList.add("schule");
 
   var text_node_1 = document.createTextNode(school.address);
+  var br = document.createElement("br");
   var text_node_2 = document.createTextNode(school.description);
   td.appendChild(text_node_1);
+  td.appendChild(br);
   td.appendChild(text_node_2);
   tr.appendChild(td);
 
