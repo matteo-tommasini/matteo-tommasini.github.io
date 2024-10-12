@@ -78,7 +78,7 @@ h2 {
 
 @media (min-width: 840px) {
   .mdl-cell--8-col, .mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
-    calc(100% -16px)!important;
+    width: calc(100% -16px)!important;
   }
 }
 
