@@ -1,0 +1,71 @@
+/* Code taken from https://css-tricks.com/position-sticky-and-table-headers/ */
+table {
+  text-align: left;
+  position: relative;
+  border-collapse: collapse; 
+}
+th, td {
+  padding: 0.25rem;
+}
+tr th {
+  color: white;
+}
+th {
+  background: white;
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+/* Code taken from https://www.w3schools.com/css/tryit.asp?filename=trycss_table_fancy */
+#my_table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#my_table td, #my_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#my_table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#my_table tr:hover {
+  background-color: #ddd;
+}
+
+#my_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+#my_table td,
+#my_table th {
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.schule {
+  width: 260px;
+  min-width: 260px;
+}
+p {
+  font-size: 18px;
+  line-height: 36px;
+}
+.tr_PLZ {
+  background-color: #07ce85 !important;
+  cursor: pointer;
+}
+h1 {
+  font-size: 35px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 25px;
+}
