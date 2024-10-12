@@ -282,7 +282,7 @@ async function getOutgoingDataOfGivenSchool(PLZ, school_id, school_categories) {
           var td_total = document.getElementById("PLZ" + "_" + PLZ + "_" + school_category);
         if (tr_PLZ.dataset.total != 0) {
           var percent = 1.0 * td_total.dataset.total / tr_PLZ.dataset.total;
-          td_total.innerHTML = Math.round(percent * 10000) / 100 + "%";
+          td_total.innerHTML = td_total.dataset.total + "(" + Math.round(percent * 10000) / 100 + "%)" ;
         }
       }
     }
