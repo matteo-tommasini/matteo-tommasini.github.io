@@ -347,7 +347,7 @@ function createRowForSchool(PLZ, school, school_categories) {
     description_in_blocks.push(current_block);
   }
   else {
-    description_in_blocks = [school_description];
+    description_in_blocks = [school.description];
   }
 
   
