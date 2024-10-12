@@ -189,6 +189,7 @@ async function getGeneralDataOfAllSchools() {
         elementary_schools[school_PLZ].push({
           "id": school.SKZ,
           "address": school.STR,
+          "description": school_description,
           "classes": school.KLASSEN, // parameter currently not used, maybe we will use it in the future
           "total_students": school.SCHUELER_INSG  // same as above
           // "male_students": school.SCHUELER_M
@@ -282,7 +283,7 @@ async function getOutgoingDataOfGivenSchool(PLZ, school_id, school_categories) {
           var td_total = document.getElementById("PLZ" + "_" + PLZ + "_" + school_category);
         if (tr_PLZ.dataset.total != 0) {
           var percent = 1.0 * td_total.dataset.total / tr_PLZ.dataset.total;
-          td_total.innerHTML = td_total.dataset.total + "(" + Math.round(percent * 10000) / 100 + "%)" ;
+          td_total.innerHTML = td_total.dataset.total + " (" + Math.round(percent * 10000) / 100 + "%)" ;
         }
       }
     }
@@ -337,9 +338,12 @@ function createRowForSchool(PLZ, school, school_categories) {
   tr.appendChild(td_empty);
 
   var td = document.createElement("td");
-  var text_node = document.createTextNode(school.address);
   td.classList.add("schule");
-  td.appendChild(text_node);
+
+  var text_node_1 = document.createTextNode(school.address);
+  var text_node_2 = document.createTextNode(school.description);
+  td.appendChild(text_node_1);
+  td.appendChild(text_node_2);
   tr.appendChild(td);
 
   for (const school_category in school_categories) {
