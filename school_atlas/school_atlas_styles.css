@@ -22,6 +22,13 @@ th {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  /* Code taken from https://stackoverflow.com/questions/19794211/horizontal-scroll-on-overflow-of-table */
+  display: block;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 #my_table td, #my_table th {
