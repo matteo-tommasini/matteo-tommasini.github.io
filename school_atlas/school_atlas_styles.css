@@ -74,17 +74,11 @@ h2 {
   .mdl-cell.mdl-cell--2-col, .mdl-cell.mdl-cell--2-col-desktop.mdl-cell--2-col-desktop {
     width: 0% !important;
   }
-  .mdl-cell.mdl-cell.mdl-cell--8-col, .mdl-cell.mdl-cell.mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
-    width: calc(100% -16px)!important;
-  }
 }
 
-@media (min-width: 1240px) {
-  .mdl-cell--2-col, .mdl-cell--2-col-desktop.mdl-cell--2-col-desktop {
-    width: 8% !important;
-  }
-  .mdl-cell.mdl-cell--8-col, .mdl-cell.mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
-    width: calc(84% -16px)!important;
+@media (min-width: 840px) {
+  .mdl-cell--8-col, .mdl-cell--8-col-desktop.mdl-cell--8-col-desktop {
+    calc(100% -16px)!important;
   }
 }
 
