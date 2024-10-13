@@ -100,10 +100,34 @@
             
             <p>
               (1) In the atlas of Statistik Austria there are some movements of students listed as "&leq; 6"; 
-              in the actual data those movements are instead
+              in the actual data, those movements are instead
               all equal to zero, and the atlas is manually coded in order to display "&leq; 6" in these cases, 
-              even if this sounds completely useless. For this reason, I opted
+              even if this sounds completely useless on first view. However, comparing the number of children for each school with the number
+              of "outgoing" children at the end of their 4th year, it is clear that some outgoing students are actually missing and indeed hidden
+              in the zero data in the database of Statistik Austria. The most probable reason for that is a data privacy issue: providing
+              numbers &leq; 6 for a given school means being able, at least in certain cases, to de-anonymize some data. As such, we can assume that
+              Statistik Austria indeed puts to zero each data &leq; 6 in their (public) database, and then provides a hint on this using the
+              manually coded "&leq; 6" information. In order to estimate what is missing, in the table below I proceeded as follows:
+              <br>
+              (a) I ignored the fact that some schools may have some classes of <i>Vorschule</i>: first of all, there is no data to use in order
+              to estimate whether a <i>Vorschule</i> is present or not; second of all, the classes of <i>Vorschule</i> are normally considerably less
+              than the classes for the 1st year of elementary school, and sometimes even integrated as part of a normal 1st class
+              <br>
+              (b) In each school separately I assumed a constant amount of students in the various classes, 
+              and of classes in the various years (= same amount of 1st, 2nd, 3rd, and 4th classes). This is not true in the case of newly created elementary schools,
+              but in this scenario, we are normally not dealing with outgoing students until an entire cycle of 4 years has passed.
+              <br>
+              (c) I assumed that all the target schools for the students "&leq; 6" all attracted the same average number of students 
               for trusting the actual source of data and not their visual representation in the atlas: all these cases are treated as zero.
+              <br>
+              All the previous ones are reasonable hypotheses, but it could be that some single schools deviate from this scenario, thus influencing the actual real data.
+              <br>
+              Given these assumptions, 
+              the estimate of "missing outgoing students" is simply obtained as the difference between the expected outgoing students
+              (the number of students in a given school, divided by  4) and the number of actual outgoing students shown by the atlas of Statistik Austria with exact numbers.
+              Then the estimated number of outgoing students of type "&leq; 6" in each target school is simply the number of estimated missing outgoing students
+              divided by the number of those target schools.
+              <br>
             </p>
 
             <br>
