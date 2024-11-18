@@ -38,6 +38,10 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css">
     <link rel="stylesheet" href="MD_styles.css">
     <link rel="stylesheet" href="school_atlas_styles_v2.css">
+
+    <!-- use xlsx.mini.min.js from version 0.20.3 -- see https://docs.sheetjs.com/docs/getting-started/installation/standalone/ 
+    This script will be used in order to generate and download xlsx files with the raw data and with the interpreted data -->
+    <script lang = "javascript" src = "https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.mini.min.js"></script>
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100" style = "overflow: visible !important;">
@@ -298,6 +302,11 @@
               </tbody>
             </table>
 
+            <p style = "text-align: center;">
+              If you want to download both the raw data and the interpreted data as an xlsx file,
+              just click <a href = "?download_xlsx">this link</a>: the page will reload and automatically download an Excel file with these data.
+            </p>
+            
           </div>
         </div>
         <footer class="demo-footer mdl-mini-footer">
@@ -313,6 +322,7 @@
       </main>
     </div>
     <!-- <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>-->
-    <script async defer src = "script_v6.js"></script>
+
+    <script async defer src = "script_v7.js"></script>
   </body>
 </html>
