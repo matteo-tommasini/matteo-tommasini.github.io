@@ -59,14 +59,14 @@
             <h2 style = "margin-bottom: 40px;">A rough analysis using the data of Vienna provided by Statistik Austria</h2>
 
             <p>
-              The data in the table below are taken from the report of Statistik Austria for the year <b>2022/23</b>.
+              The data in the table below are taken from the report of Statistik Austria for the year <b>2023/24</b> (published at the beginning of December 2024).
             </p>
 
             <br>
             
             <p>
               Most of the tables and additional information from Statistik Austria are provided in the Report 
-              "Schule, Schulbesuch 2022/23" at 
+              "Schule, Schulbesuch 2023/24" available at 
               <a target = _blank rel = "noopener" href = "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/bildung/schulbesuch">this link</a>.
             </p>
             
@@ -88,8 +88,8 @@
             <br>
             
             <p>
-              The next report with the data of the school year 2023/24 is expected to be published on 29.11.2024; 
-              it is however not clear if the new data needed for generating the table below
+              The next report with the data of students attending the school year 2024/25 is expected to be published at the end of
+              November or at the beginning of December 2025; it is however not clear if the new data needed for generating the table below
               will be automatically updated in the atlas at the same time, or only in the next few weeks. 
               If I will have some time (and if the data are still available in the same format), I will update this website accordingly, 
               but I cannot promise anything at the moment.
@@ -176,7 +176,7 @@
               </summary>
               <p>
                 This is a list extracted from the data of Statistik Austria, but I don't claim completeness.
-                You can notice that there are also a Volksschule (but it is not categorized as a Volksschule in the data of Statistik Austria)
+                You can notice that there are also a Volksschule (but it is not categorized as a Volksschule in the data of Statistik Austria - no idea why)
                 and schools for classes 10 to 12, which of course are not relevant for the analysis of the immediate schools after
                 the 4th year of Volksschule.
               </p>
@@ -259,7 +259,7 @@
                 Loading data from Statistik Austria ...
               </span>
               <span id = "loading_schools" style = "display: none;">
-                Loading school <span id = "completed_elementary_schools">1</span> of <span id = "total_elementary_schools_in_vienna"></span> ...
+                Loading school <span id = "completed_elementary_schools">1</span> of <span id = "total_elementary_schools_in_Vienna"></span> ...
               </span>
               <span id = "data_loaded" style = "display: none;">
                 Loading completed.
@@ -286,7 +286,7 @@
                 </tr>
               </thead>
               <tbody id = "tbody">
-                <tr id = "whole_vienna" class = "tr_PLZ" data-total = "0">
+                <tr id = "whole_Vienna" class = "tr_PLZ" data-total = "0">
                   <td>
                     Whole
                     <br>
@@ -294,17 +294,30 @@
                   </td>
                   <td class = "schule"><!-- empty on purpose --></td>
 
-                  <!-- <td id = "whole_vienna_ahs" data-total_confirmed="0" data-total_estimated="0"></td>
-                  <td id = "whole_vienna_hs" data-total_confirmed="0" data-total_estimated="0"></td>
-                  <td id = "whole_vienna_ss" data-total_confirmed="0" data-total_estimated="0"></td>
-                  <td id = "whole_vienna_vs" data-total_confirmed="0" data-total_estimated="0"></td>-->
+                  <!-- <td id = "whole_Vienna_ahs" data-total_confirmed="0" data-total_estimated="0"></td>
+                  <td id = "whole_Vienna_hs" data-total_confirmed="0" data-total_estimated="0"></td>
+                  <td id = "whole_Vienna_ss" data-total_confirmed="0" data-total_estimated="0"></td>
+                  <td id = "whole_Vienna_vs" data-total_confirmed="0" data-total_estimated="0"></td>-->
                 </tr>
               </tbody>
             </table>
 
             <p style = "text-align: center;">
               If you want to download both the raw data and the interpreted data as an xlsx file,
-              just click <a href = "?download_xlsx">this link</a>: the page will reload and automatically download an Excel file with these data.
+              just click <a href = "?download=xlsx">this link</a>: the page will reload and automatically 
+              download an xls file when the analysis is completed.
+            </p>
+            <p style = "text-align: center;">
+              If you want to download only the raw data as a json file,
+              just click <a href = "?download=json">this link</a>: the page will reload and automatically 
+              download a json file when the analysis is completed.
+            </p>
+
+            <hr>
+
+            <p>
+              For a future version: I plan to provide also: 
+              (1) comparisons with the estimates for the previous school years and (2) also the average number of children / class for each school.
             </p>
             
           </div>
@@ -323,6 +336,6 @@
     </div>
     <!-- <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>-->
 
-    <script async defer src = "script_v7.js"></script>
+    <script async defer src = "script_v8.js"></script>
   </body>
 </html>
