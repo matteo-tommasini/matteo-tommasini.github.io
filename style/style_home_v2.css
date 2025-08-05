@@ -1,0 +1,1600 @@
+/* Copyright:
+- lines 10-52: CSS reset by http://meyerweb.com/eric/tools/css/reset/
+- lines 57-98: Code modified from https://www.w3schools.com/howto/howto_css_dropdown.asp
+- lines 101-1600: code by Matteo Tommasini */
+
+/* CSS reset by http://meyerweb.com/eric/tools/css/reset/ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* End of CSS reset by http://meyerweb.com/eric/tools/css/reset/ */
+
+/* Code for the dropdown menu (to be used for small screens) */
+/* Code modified from https://www.w3schools.com/howto/howto_css_dropdown.asp */
+.dropbtn {
+  background-color: rgb(252,163,17);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.dropdown {
+  position: fixed;
+  right: 0;
+  display: inline-block;
+  float: right;
+  z-index: 990;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+  text-transform: uppercase;
+  color: rgb(85,26,139);
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 16px;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: rgb(252,163,17);
+}
+.dropdown:hover .dropbtn {
+    background-color: rgb(85,26,139);
+}
+.show {
+  display:block;
+}
+/* End of code modified from https://www.w3schools.com/howto/howto_css_dropdown.asp */
+
+/* From here: code by Matteo Tommasini */
+body {
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;  /* This is needed for compatibilty with animations with AOS, see the comments at
+                       https://css-tricks.com/aos-css-driven-scroll-animation-library/ */
+}
+h1 {
+  color: #FFF;
+  font-family: 'Amatic SC', cursive;
+  font-size: 80px;
+  line-height: 60px;
+  padding: 20px 10px;
+  text-align: center;
+}
+h2 {
+  color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  text-align: center;
+}
+h3 {
+  color: #FCA311;
+  font-family: 'Abel', sans-serif;
+  font-size: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+h4 {
+  color: #FCA311;
+  font-family: 'Abel', sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  margin: 15px 0px 15px 0px;
+}
+h4 a {
+  color: #FCA311;
+}
+h5 {
+  font-size: 28px;
+}
+p {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 10px;
+  line-height: 30px;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Style of ordered lists (used in the section about scientific papers) */
+ol li {
+  list-style-type: decimal;
+  margin-left: 100px;
+  display: list-item;
+  font-size: 40px;
+  font-weight: normal;
+  color: #FCA311;
+  vertical-align: middle; /* This allows the number to be aligned with the vertical center
+                             of each title of a paper in case of multiple lines */ 
+}
+/* Italic style */
+.italic {
+  font-style: italic;
+}
+/* Dotted list (to be used for some unordered lists) */
+.my_dotted_list {
+  color: #FCA311;
+  list-style: disc;
+  margin: 30px;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.my_dotted_list li p {
+  color: #000;
+}
+/* Tiles to be used for unordered lists */
+.my_tiles li {
+  display: inline-block;
+  margin: 10px;
+  background-color: #FCA311;
+  padding: 10px;
+}
+/* Subsections */
+.divide {
+  margin-top: 15px;
+  padding-top: 10px;
+  width: 100%;
+  border-top: 2px solid rgba(252,163,17,0.3);
+}
+.divide-both {
+  padding-top: 0px;
+  padding-bottom: 10px;
+  width: 100%;
+  border-top: 2px solid rgba(252,163,17,0.3);
+}
+.divide-both:first-of-type {
+  border-top: none;
+}
+.divide-bottom {
+  padding-top: 0px;
+  padding-bottom: 10px;
+  width: 100%;
+  border-bottom: 2px solid rgba(252,163,17,0.3);
+}
+@media screen and (min-width: 1000px) {
+  .divide-bottom {
+    padding-bottom: 1vw;
+  }
+}
+
+/* Upper navigation bar - Part 1.
+   General values, used both for the big navigation bar
+   and for the reduced navigation bar */
+#navigation-bar, #navigation-bar-phones {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #FFF;
+  z-index: 100;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.my_name {
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: 'Amatic SC', cursive;
+  text-align: left;
+}
+.my_name a {
+  color: #FCA311;
+}
+.my_name span {
+  transition: font-size 0.2s ease-out 0s;
+}
+.menu {
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: 'Abel', sans-serif;
+  padding-right: 1.5vw;
+  text-transform: uppercase;
+}
+.menu p {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+}
+.menu a {
+  color: rgb(85,26,139);
+}
+.menu a:hover {
+  color: #FCA311;
+}
+.scrolled-nav .my_name a:hover {
+  color: rgb(85,26,139);
+}
+#short-nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#short-nav a:hover {
+  color: #FCA311;
+}
+#short-nav .my_name {
+  margin-left: 1.5vw;
+}
+.menu-short-nav {
+	font-family: 'Abel', sans-serif;
+	float: right;
+  text-transform: uppercase;
+  margin-right: 1.5vw;
+}
+.menu-short-nav p {
+  display: inline-block;
+  margin-left: 18px;
+}
+.menu-short-nav p:first-of-type {
+  margin-left: 0;
+}
+.line-short-nav {
+  height: 45px;
+}
+#navigation-bar {
+  display: none;
+}
+#menu-button-1 {
+  display: none;
+}
+.dropbtn {
+  padding: 15px;
+  font-size: 15px;
+}
+#navigation-bar-phones {
+  height: 38px;
+  border-bottom: 3px solid rgb(252,163,17);
+}
+.my_name {
+  margin-left: 1vw;
+  font-weight: bold;
+  padding-top: 5px;
+  letter-spacing: 2px;
+  font-size: 28px;
+}
+#top {
+  height: 18px; /* same height as the navigation bar, minus 20px
+                   (for the margin-bottom of the section #cover) */
+}
+#menu-button-2 {
+  display: block;
+  font-size: 18px;
+  padding: 7px;
+}
+
+@media screen and (min-width: 240px) {
+  #navigation-bar-phones {
+    height: 40px;
+  }
+  .my_name {
+    font-size: 30px;
+  }
+  #top {
+    height: 20px; /* same height as the navigation bar, minus 20px
+                     (for the margin-bottom of the section #cover) */
+  }
+  #menu-button-2 {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+@media screen and (min-width: 275px) {
+  #menu-button-2 {
+    padding: 10px;
+    font-size: 24px;
+  }
+  #navigation-bar-phones {
+    height: 45px;
+  }
+  #top {
+    height: 25px; /* same height as the navigation bar, minus 20px
+                     (for the margin-bottom of the section #cover) */
+  }
+}
+@media screen and (min-width: 320px) {
+  #menu-button-1 {
+    display: block;
+  }
+  #menu-button-2 {
+    display: none;
+  }
+}
+@media screen and (min-width: 340px) {
+  .dropbtn {
+    padding: 16px;
+    font-size: 16px;
+  }
+  .my_name {
+    font-size: 40px;
+    padding-top: 3px;
+  }
+  #navigation-bar-phones {
+    height: 50px;
+  }
+  #top {
+    height: 30px; /* same height as the navigation bar, minus 20px
+                     (for the margin-bottom of the section #cover) */
+  }
+}
+@media screen and (min-width: 590px) {
+  #navigation-bar {
+    display: block;
+  }
+  #navigation-bar-phones {
+    display: none;
+  }
+  .navigation, .navigation .menu, .navigation .my_name {
+    height: 132px;
+  }
+  #top {
+    height: 112px; /* same height as the navigation bar, minus 20px
+                      (for the margin-bottom of the section #cover) */
+  }
+  .my_name {
+    margin-left: 0;
+  }
+  .navigation .my_name {
+    font-weight: 400;
+    display: inline-block;
+  }
+  .navigation .my_name div {
+    padding-left: 1.5vw;
+  }
+  .navigation .first-name, .navigation .last-name {
+    display: block;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: normal;
+    padding-bottom: 0px;
+    padding-right: 10px;
+  }
+  .navigation .first-name {
+    padding-top: 5px;
+  }
+  .navigation .last-name {
+    padding-top: 3px;
+  }
+  .navigation .menu {
+    text-align: right;
+    float: right;
+  }
+  .navigation #menu-D {
+    display: block;
+  }
+ .navigation .menu p {
+    height: 44px;
+    font-size: 20px;
+    padding-right: 20px;
+    transition: height 0.4s linear 0.4s, padding 0.4s linear 0.4s,
+                font-size 0.4s linear 0.4s, font-weight 0.4s linear 0s,
+                letter-spacing 0.4s linear 0s;
+  }
+  .navigation .menu-bd-first-line p {
+    padding-top: 18px;
+    padding-bottom: 6px;
+  }
+  .navigation .menu-bd-second-line p {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .navigation .menu-bd-third-line p {
+    padding-top: 6px;
+    padding-bottom: 18px;
+  }
+  .navigation .menu p:last-of-type {
+    padding-right: 0;
+  }
+  .navigation #menu-A, .navigation #menu-B, .navigation #menu-C {
+    display: none;
+  }
+  .scrolled-nav .menu, .scrolled-nav .my_name {
+	 height: 0;
+  }
+  .scrolled-nav .id-my_name, .navigation #short-nav,
+  .scrolled-nav #menu-A, .scrolled-nav #menu-B,
+  .scrolled-nav #menu-C, .scrolled-nav #menu-D {
+    display: none;
+  }
+  .scrolled-nav #short-nav {
+    display: block;
+  }
+  .scrolled-nav {
+    height: 90px;
+  }
+  .scrolled-nav .my_name {
+	  height: 45px;
+  }
+  .scrolled-nav .menu p {
+    height: 45px;
+    transition: height 0.4s linear 0s, padding 0.4s linear 0s,
+                font-size 0.4s linear 0s, font-weight 0.4s linear 0.4s, 
+                letter-spacing 0.4s linear 0.4s;
+  }
+  .scrolled-nav .first-name, .scrolled-nav .last-name {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    padding-right: 8px;
+  }
+}
+@media screen and (min-width: 730px) {
+  .navigation #short-nav, .scrolled-nav #short-nav {
+    display: none;
+  }
+  .navigation .my_name {
+    display: inline-block;
+  }
+  .scrolled-nav .id-my_name {
+    display: inline-block;
+  }
+  .scrolled-nav #menu-C {
+    display: inline-block;
+  }
+  .scrolled-nav .my_name div {
+    padding-left: 1.5vw;
+  }
+  .scrolled-nav .first-name {
+    padding-top: 11px;
+  }
+  .scrolled-nav .last-name {
+    padding-top: 0px;
+  }
+  .scrolled-nav .menu {
+    text-align: right;
+    float: right;
+  }
+  .scrolled-nav .my_name, .scrolled-nav .menu {
+    height: 90px;
+  }
+  .scrolled-nav .first-name, .scrolled-nav .last-name {
+    display: block;
+    padding-bottom: 5px;
+    padding-right: 15px;
+  }
+  .scrolled-nav .menu p {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+  }
+  .scrolled-nav .menu p:last-of-type {
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 860px) {
+  .navigation #menu-D {
+    display: none;
+  }
+  .navigation #menu-B {
+    display: inline-block;
+  }
+  .navigation .last-name {
+    padding-top: 5px;
+  }
+  .navigation .first-name {
+    padding-top: 3px;
+  }
+}
+@media screen and (min-width: 880px) {
+  .scrolled-nav #menu-C {
+    display: none;
+  }
+  .scrolled-nav #menu-A {
+    display: inline-block;
+  }
+  .scrolled-nav .first-name, .scrolled-nav .last-name {
+    padding-top: 11px;
+  }
+  .scrolled-nav .last-name {
+    padding-top: 0px;
+  }
+}
+@media screen and (min-width: 1095px) {
+  .navigation .first-name, .navigation .last-name {
+    display: inline-block;
+    font-size: 90px;
+    font-weight: normal;
+    padding-top: 14px;
+    padding-bottom: 17px;
+  }
+  .scrolled-nav .first-name, .scrolled-nav .last-name {
+    display:inline-block;
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+  }
+  .scrolled-nav .menu p {
+    font-size: 20px;
+    letter-spacing: normal;
+    padding-top: 10px;
+  }
+}
+@media screen and (min-width: 1210px) {
+  .navigation .menu-bd-second-line p {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .navigation .menu-bd-third-line p {
+    padding-top: 6px;
+    padding-bottom: 18px;
+  }
+  .navigation .menu p:last-of-type {
+    padding-right: 0;
+  }
+  .navigation .first-name, .navigation .last-name {
+    font-size: 115px;
+    padding-top: 4px;
+    padding-bottom: 17px;
+    padding-right: 10px;
+  }
+  .scrolled-nav .menu p {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1455px) {
+  .navigation #menu-A {
+    display: inline-block;
+  }
+  .navigation #menu-B {
+    display: none;
+  }
+  .navigation .menu p {
+    height: 66px;
+    font-size: 26px;
+    padding-right: 20px;
+  }
+  .navigation .menu-ac-first-line p {
+    padding-top: 28px;
+    padding-bottom: 12px;
+  }
+  .navigation .menu-ac-second-line p {
+    padding-top: 12px;
+    padding-bottom: 28px;
+  }
+  .navigation .first-name, .navigation .last-name {
+    font-size: 100px;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+  }
+}
+@media screen and (min-width: 1460px) {
+  .scrolled-nav .first-name, .scrolled-nav .last-name {
+    font-size: 80px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .scrolled-nav .menu p {
+    font-weight: bold;
+    letter-spacing: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+  }
+}
+@media screen and (min-width: 1540px) {
+  .navigation .menu p {
+    height: 66px;
+    font-size: 26px;
+    padding-right: 20px;
+  }
+  .navigation .menu .first-line p {
+    padding-top: 27px;
+    padding-bottom: 13px;
+  }
+  .navigation .menu .second-line p {
+    padding-top: 13px;
+    padding-bottom: 27px;
+  }
+  .navigation .first-name, .navigation .last-name {
+    font-size: 115px;
+    padding-top: 8px;
+    padding-bottom: 9px;
+  }
+}
+/* Standard section, covering 97% of the available width.
+   Normally it contains two columns side by side (described below). */
+.my_section {
+  background: #EEEFF1;
+  box-sizing: border-box;
+  margin: 20px 1.5vw;
+  text-align: center;
+}
+.my_section-image-background {
+  box-sizing: border-box;
+  margin: 20px 1.5vw;
+  text-align: center;
+  height: 56vw;
+  /* NOTE: the value 56vw is computed as 0.58 (the ratio height/width
+  of the photos that will be used in this file; change it individually if the photos
+  have different radius) times the value 97vw (i.e. the width of each section
+  (100vw -1.5vw*2 for the borders), hence the maximum width that an image can cover);*/
+}
+
+/* Columns occupying the same height (and a little less than half of the width) */
+/* Code adapted from here http://jsfiddle.net/kjjd66zk/4/ */
+.flex-container {
+  display: flex;                 /* primary flex container */
+  flex-direction: row;           /* horizontal alignment of flex items (default value; can be omitted) */
+  align-items: stretch;          /* will apply equal heights to flex items (default value; can be omitted) */
+  flex-wrap: wrap;
+}
+
+.flex-item {
+    display: flex;                 /* nested flex container */
+    flex-direction: column;        /* vertical alignment of flex items */
+    justify-content: center;       /* center flex items vertically */
+    align-items: center;           /* center flex items horizontally */
+    flex: 1;                       /* consumes the same width as his siblings */
+    margin: 10px;
+}
+@media screen and (min-width: 1000px) {
+  .flex-item {
+    margin: 1vw;
+  }
+}
+.flex-item:nth-of-type(2) {
+  margin-left: 0;
+}
+.text {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 4px;
+}
+.col-blur {
+  background-color: rgba(255,255,255,0.8);
+}
+
+/* margins */
+.my_margins {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1000px) {
+  .my_margins {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+  }
+}
+
+/* Anchor for each section */
+/* The values below (up to sign) must be slightly bigger than the height
+   of the scrolled-nav (50px for small screens, 90px for big enough screens) */
+.anchor {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  top: -70px;
+}
+@media screen and (min-width: 590px) {
+  .anchor {
+    top: -110px;
+  }
+}
+
+/* Cover with welcome message */
+#cover {
+  background: url("../images/donaukanal_01.jpg") no-repeat top right;
+  background-size: 100% auto;
+}
+.cover-content {
+  top: 0;
+  right: 0;
+  position: relative;
+}
+.cover-content h1 {
+  font-size: 8vw;
+  padding: 2px 0 0.5vw 0;
+  text-align: left;
+  line-height: 7vw;
+}
+.cover-content h1:first-of-type {
+  margin-left: 1vw;
+}
+.cover-content h1:last-of-type {
+  margin-left: 14vw;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.cover-content h2 {
+  font-size: 3vw;
+  display: block;
+  text-align: right;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-top: 1vw;
+  margin-right: 2vw;
+}
+.cover-content h2:first-of-type {
+  margin-top: 0;
+}
+
+/* Section "About me" */
+#myphoto {
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+#cv {
+  background: url("../images/donaukanal_02.jpg") no-repeat top right;
+  background-size: 100% auto;
+}
+.ul-cv > li {
+  display: block;
+  margin: 25px auto;
+  font-size: 25px;
+}
+#cv h4 {
+  margin-bottom: 2px;
+}
+
+/* For small screens */
+#cv-first-col, #cv-second-col, #cv-third-col {
+  display: none;
+}
+@media screen and (min-width: 720px) {
+  #cv-first-col {
+    display: flex;
+  }
+  #cv-duplicated-first-col {
+    display: none;
+  }
+}
+@media screen and (min-width: 970px) {
+  #cv-second-col {
+    display: flex;
+  }
+  #cv-duplicated-second-col {
+    display: none;
+  }
+}
+@media screen and (min-width: 1350px) {
+  /* #cv-first-col {
+    width: 46%;
+  } */
+  #cv-third-col {
+    display: flex;
+  }
+  #cv-duplicated-third-col {
+    display: none;
+  }
+  #cv-duplicated {
+    display: none;
+  }
+}
+
+
+#previous-work-second-col {
+  display: none;
+}
+@media screen and (min-width: 1150px) {
+  .previous-work-duplicated {
+    display: none;
+  }
+  #previous-work-second-col {
+    display: block;
+  }
+}
+
+	
+.cv-in-pdf .flex-container {
+  flex-direction: column;
+}
+.cv-in-pdf .flex-item:nth-of-type(2) {
+  margin-left: 10px;
+  margin-top: 0;
+}
+@media screen and (min-width: 650px) {
+  .cv-in-pdf .flex-container {
+    flex-direction: row;
+  }
+  .cv-in-pdf .flex-item:nth-of-type(2) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .cv-in-pdf .flex-item:nth-of-type(2) {
+    margin-top: 1vw;
+  }
+}
+#section-about>h3 {
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+#about-me-left .text {
+  padding: 0;
+}
+#about-me-left h3, #about-me-right h3 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#about-me-left h3 {
+  display: block;
+}
+#about-me-title-top, #about-me-right h3 {
+  display: none;
+}
+#section-about .flex-container {
+  flex-direction: column;
+}
+#section-about .flex-item:nth-of-type(2) {
+  margin-top: 0;
+  margin-left: 10px;
+}
+@media screen and (min-width: 670px) {
+  #section-about .flex-container {
+    flex-direction: row;
+  }
+  #section-about .flex-item:nth-of-type(2) {
+  margin-top: 10px;
+  margin-left: 0;
+  }
+}
+@media screen and (min-width: 760px) {
+  #about-me-title-top {
+    display: block;
+    margin-bottom: 20px;
+  }
+  #about-me-left h3, #about-me-right h3{
+    display: none;
+  }
+}
+@media screen and (min-width: 795px) {
+  #about-me-title-top, #about-me-left h3 {
+    display: none;
+  }  
+  #about-me-right h3 {
+    display: block;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #section-about .flex-item:n-th-of-type(2) {
+  margin-top: 1vw;
+  margin-left: 0;
+  }
+}
+
+/* Scientific papers */
+#section-publications h3,
+#section-teaching h3,
+#section-talks h3 {
+  padding-bottom: 10px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+.teaching-title,
+.pub-title,
+.pub-title-no-details {
+  color: #14213D;
+  font-family: 'Abel', sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  text-transform: none;
+  text-align: center;
+  color: #14213D;
+  display: inline-block;
+  vertical-align: middle;
+}
+.pub-title,
+.pub-title-no-details {
+  font-size: 20px;
+  padding: 5px;
+}
+#section-publications h4 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1000px) {
+  #section-publications h4 {
+    margin-top: 1vw;
+  }
+}
+.pub-title:hover {
+  cursor: pointer;
+}
+#abstract-name {
+  display: inline;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+}
+.my_subtitle {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+/* This instruction targets the results of MathJax, hence objects that are not directly visible in the
+html source of the page. Do not remove it, even if it does not seem useful at first sight. */
+.pub-title span, .pub-title-no-details span {
+  font-size: 26px;
+}
+/* This instruction targets the result of MathJax, hence objects that are not directly visible in the
+html source of the page. Do not remove it, even if it does not seem useful at first sight. */
+.abstract {
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+  border-top: 1px dashed #7F7F7F;
+}
+.abstract > p:first-of-type {
+  display: inline;
+}
+.additional-info {
+  margin-top: 10px;
+  border-top: 1px dashed #7F7F7F;
+}
+/* These are the details of every scientific paper. At the beginning they are not displayed.
+   The information for every paper are copied and showed on (almost) full screen using a JS script. */
+.details {
+  margin-top: 10px;
+  background-color: rgba(252,163,17,0.3);
+  display: none;
+  padding: 8px;
+  border: 1px solid #FCA311;
+}
+.four-papers .flex-item {
+  flex-basis: 60%;  /* This forces at most 1 flex-item per row */
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 650px) { /* View 2x2 */
+  .four-papers .flex-item {
+    flex-basis: 35%;  /* This forces at most 2 flex-item(s) per row */
+  }
+  .four-papers .flex-item:nth-of-type(2),
+  .four-papers .flex-item:nth-of-type(4) {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 860px) { /* View 4x1 */
+  .four-papers .flex-item {
+    flex-basis: 15%;  /* This allows to have all the (4) columns that we want */
+  }
+  .four-papers .flex-item:nth-of-type(3) {
+    margin-left: 0; /* Fix the incorrect behaviour of the third element
+    with this screen view (4 flex elements in a row) */
+  }
+}
+@media screen and (min-width: 1000px) {
+  .four-papers .flex-item {
+    margin-left: 1vw;
+  }
+}
+.three-papers .flex-item {
+  flex-basis: 60%;  /* This forces at most 1 flex-item per row */
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 650px) { /* View 1 in the first row, 2 in the second row */
+  .three-papers .flex-item {
+    flex-basis: 15%;
+  }
+  .three-papers .flex-item:first-of-type {
+    flex-basis: 90%;
+  }  
+  .three-papers .flex-item:nth-of-type(3) {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 860px) { /* View 3x1 */
+  .three-papers .flex-item:first-of-type {
+    flex-basis: 15%;
+  }
+  .three-papers .flex-item:nth-of-type(2) {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .three-papers .flex-item {
+    margin-left: 1vw;
+  }
+}
+.five-papers .flex-item {
+  flex-basis: 60%;  /* This forces at most 1 flex-item per row */
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+.five-papers .flex-item:nth-of-type(5) {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 650px) {
+/* View 1 in the first and third row, 3 in the second row */
+  .five-papers .flex-item {
+    flex-basis: 15%;
+  }
+  .five-papers .flex-item:nth-of-type(1),
+  .five-papers .flex-item:nth-of-type(5) {
+    flex-basis: 90%;
+  }
+  .five-papers .flex-item:nth-of-type(3),
+  .five-papers .flex-item:nth-of-type(4) {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 900px) {
+/* 2 in first and second row, 1 in third row */
+  .five-papers .flex-item {
+    flex-basis: 10%;
+  }
+  .five-papers .flex-item:nth-of-type(1) {
+    order: 2;
+    margin-left: 0; /* NOTE: this targets the second flex element
+                      (in this visualization);*/
+    flex-basis: 10%;
+  }
+  .five-papers .flex-item:nth-of-type(2) {
+    order: 1;
+    margin-left: 10px; /* NOTE: this targets the first flex element
+                          (in this visualization);*/
+  }
+  .five-papers .flex-item:nth-of-type(3) { 
+    order: 3;
+  }
+  .five-papers .flex-item:nth-of-type(4) {
+    order: 4;
+  }
+  .five-papers .flex-item:nth-of-type(5) { 
+    order: 5; 
+  }
+}
+@media screen and (min-width: 1000px) {
+  .five-papers .flex-item:nth-of-type(5) {
+    flex-basis: 10%;
+    margin-left: 0;
+    margin-bottom: 1vw;
+  }
+  .five-papers .flex-item {
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+  }
+  .five-papers .flex-item:nth-of-type(2) {
+    margin-left: 1vw;
+  }
+}
+/* Teaching section */
+#teaching-begin {
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1000px) {
+  #teaching-begin {
+    margin-bottom: 1vw;
+  }
+}
+.teaching-title p {
+  font-size: 20px;
+}
+#section-teaching .flex-item {
+  flex-basis: 90%;
+  margin-top: 0;
+  margin-left: 10px;
+  padding: 5px;
+}
+@media screen and (min-width: 800px) {
+  #section-teaching .flex-item:nth-of-type(1),
+  #section-teaching .flex-item:nth-of-type(2),
+  #section-teaching .flex-item:nth-of-type(3) {
+    flex-basis: 10%;
+  }
+  #section-teaching .flex-item:nth-of-type(2),
+  #section-teaching .flex-item:nth-of-type(3) {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 800px) {
+  #section-teaching .flex-item:nth-of-type(1),
+  #section-teaching .flex-item:nth-of-type(4) {
+    margin-left: 1vw;
+  }
+}
+.teaching-title:hover {
+  cursor: pointer;
+}
+.teaching-title p {
+  font-size: 20px;
+  display: inline-block;
+}
+.teaching-block {
+  margin: 0 10px 10px 10px;
+}
+.teaching-block:nth-of-type(1) {
+  padding-top: 10px;
+}
+.teaching .details {
+  margin: 5px 20px 0 20px;
+  padding-top: 5px;
+}
+
+/* Section "Talks" */
+#talks-begin {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@media screen and (min-width: 1000px) {
+  #talks-begin {
+    margin-bottom: 1vw;
+  }
+}
+#section-talks div {
+  margin-bottom: 10px;  
+}
+#section-talks .flex-item {
+  padding: 8px;
+  font-size: 25px;
+  font-family: Abel, sans-serif;
+  margin-top: 0;
+}
+#section-talks .date-talk,
+#section-talks .place-talk,
+#section-talks .title-talk {
+  flex-basis: 80%;
+  margin-left: 10px;
+}
+@media screen and (min-width: 350px) {
+  #section-talks .date-talk {
+    flex-basis: 12%;
+  }
+  #section-talks .place-talk {
+    flex-basis: 24%;
+    margin-left: 0;
+  }
+  #section-talks .title-talk {
+    flex-basis: 95%;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 740px) {
+  #section-talks .date-talk {
+    flex-basis: 10%;
+  }
+  #section-talks .place-talk {
+    flex-basis: 20%;
+    margin-left: 0;
+  }
+  #section-talks .title-talk {
+    flex-basis: 40%;
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #section-talks .place-talk,
+  #section-talks .title-talk {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+  }
+  #section-talks .date-talk {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+  }
+}
+#section-talks .date-talk-4,
+#section-talks .place-talk-4,
+#section-talks .title-talk-4,
+#section-talks .conference-talk-4 {
+  flex-basis: 80%;
+  margin-left: 10px;
+}
+@media screen and (min-width: 350px) {
+  #section-talks .date-talk-4 {
+    flex-basis: 12%;
+  }
+  #section-talks .place-talk-4 {
+    flex-basis: 24%;
+    margin-left: 0;
+  }
+  #section-talks .title-talk-4,
+  #section-talks .conference-talk-4 {
+    flex-basis: 95%;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 740px) {
+  #section-talks .date-talk-4 {
+    flex-basis: 10%;
+  }
+  #section-talks .place-talk-4 {
+    flex-basis: 20%;
+    margin-left: 0;
+  }
+  #section-talks .title-talk-4 {
+    flex-basis: 40%;
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #section-talks .place-talk-4,
+  #section-talks .title-talk-4,
+  #section-talks .conference-talk-4 {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    flex-basis: 20%;
+  }
+  #section-talks .place-talk-4 {
+    flex-basis: 15%;
+  }
+  #section-talks .conference-talk-4 {
+    margin-left: 0;
+  }
+  #section-talks .date-talk-4 {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+    flex-basis: 8%;
+  }
+}
+#section-talks .date-talk-3,
+#section-talks .place-talk-3,
+#section-talks .title-talk-3 {
+  flex-basis: 80%;
+  margin-left: 10px;
+}
+@media screen and (min-width: 350px) {
+  #section-talks .date-talk-3 {
+    flex-basis: 12%;
+  }
+  #section-talks .place-talk-3 {
+    flex-basis: 24%;
+    margin-left: 0;
+  }
+  #section-talks .title-talk-3 {
+    flex-basis: 95%;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 740px) {
+  #section-talks .date-talk-3 {
+    flex-basis: 10%;
+  }
+  #section-talks .place-talk-3 {
+    flex-basis: 20%;
+    margin-left: 0;
+  }
+  #section-talks .title-talk-3 {
+    flex-basis: 40%;
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #section-talks .place-talk-3,
+  #section-talks .title-talk-3 {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+  }
+  #section-talks .date-talk-3 {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+  }
+}
+#section-talks .date-talk-2,
+#section-talks .title-talk-2 {
+  flex-basis: 80%;
+  margin-left: 10px;
+}
+@media screen and (min-width: 350px) {
+  #section-talks .date-talk-2 {
+    flex-basis: 140px;
+  }
+  #section-talks .title-talk-2 {
+    flex-basis: 60%;
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #section-talks .title-talk-2 {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+  }
+  #section-talks .date-talk-2 {
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+  }
+}
+
+/* Section "Some links" */
+#section-links {
+  background: url("../images/kunsthistorischesmuseum_01.jpg") no-repeat top right;
+  background-size: 100% auto;
+}
+#section-links h4 {
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 0;
+}
+#section-links ul {
+  text-align: right;
+}
+#section-links .my_tiles li {
+  margin-top: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 0;
+  margin-right: 8px;
+}
+#section-links>div {
+  padding-top: 10px;
+  display: none;
+}
+#professional-links-duplicated {
+  margin-bottom: 10px;
+}
+.h4_adjusted {
+  padding-top: 10px;
+}
+@media screen and (min-width: 480px) {
+  #professional-links-duplicated {
+    display: none;
+  }
+  #section-links>div {
+    display: block;
+  }
+}
+@media screen and (min-width: 480px) {
+  #section-links>div {
+    padding-top: 1vw;
+  }
+  #section-links .my_tiles li {
+    margin-bottom: 1vw;
+    margin-right: 0.8vw;
+  }
+}
+
+.other_h4_fix {
+  padding-top: 10px;
+}
+#blogs-list .flex-item {
+  padding: 8px;
+  font-size: 25px;
+  font-family: Abel, sans-serif;
+  margin-top: 0;
+  flex-basis: 80%
+}
+@media screen and (min-width: 440px) {
+  #blogs-list .flex-item:nth-of-type(1),
+  #blogs-list .flex-item:nth-of-type(2) {
+    flex-basis: 25%
+  }
+}
+@media screen and (min-width: 900px) {
+  #blogs-list .flex-item:nth-of-type(1) {
+    order: 1;
+  }
+  #blogs-list .flex-item:nth-of-type(2) {
+    order: 3;
+  }
+  #blogs-list .flex-item:nth-of-type(3) {
+    order: 2;
+    flex-basis: 25%;
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #blogs-list .flex-item:nth-of-type(1) {
+    margin-left: 1vw;
+  }
+  #blogs-list .flex-item:nth-of-type(2),
+  #blogs-list .flex-item:nth-of-type(3) {
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+  }
+}
+
+/* Friends and collaborators */
+#friends {
+  margin-left: 10px;
+}
+#friends li {
+  margin: 0 10px 10px 0;
+}
+#friends li:nth-of-type(14n+1) {
+  background-color: rgba(252,163,17,0.13);
+}
+#friends li:nth-of-type(14n+2),
+#friends li:nth-of-type(14n) {
+  background-color: rgba(252,163,17,0.26);
+}
+#friends li:nth-of-type(14n+3),
+#friends li:nth-of-type(14n+13) {
+  background-color: rgba(252,163,17,0.39);
+}
+#friends li:nth-of-type(14n+4),
+#friends li:nth-of-type(14n+12) {
+  background-color: rgba(252,163,17,0.52);
+}
+#friends li:nth-of-type(14n+5),
+#friends li:nth-of-type(14n+11) {
+  background-color: rgba(252,163,17,0.65);
+}
+#friends li:nth-of-type(14n+6),
+#friends li:nth-of-type(14n+10) {
+  background-color: rgba(252,163,17,0.78);
+}
+#friends li:nth-of-type(14n+7),
+#friends li:nth-of-type(14n+9) {
+  background-color: rgba(252,163,17,0.91);
+}
+#friends li:nth-of-type(14n+8) {
+  background-color: rgba(252,163,17,1);
+}
+
+/* Section "Contacts" */
+#section-contacts {
+  background: url("../images/kahlenberg_01.jpg") no-repeat top right;
+  background-size: 100% auto; 
+}
+.contact-type {
+  font-weight: bold;
+}
+#contacts-duplicated {
+  text-align: center;
+}
+#section-contacts div {
+  text-align: center;
+}
+#section-contacts p {
+  margin-top: 2px;
+}
+#section-contacts .my_margins {
+  padding-top: 1%;
+}
+#section-contacts div {
+  display: none;
+}
+@media screen and (min-width: 450px) {
+  #section-contacts div {
+    display: block;
+  }
+  #contacts-duplicated {
+    display: none;
+  }
+  #section-contacts p {
+    margin-top: 5px;
+  }
+  #section-contacts .my_margins {
+    padding-top: 2.5%;
+  }
+}
+
+/* Footer */
+.footer {
+  font-size: 15px; 
+  font-family: Quicksand, sans-serif;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+/* Container for the details on full screen (to be used for
+the scientific papers and the details about the courses) */
+#big-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2vw solid #FFF;
+  padding: 10px;
+  background-color: #FFC76C;
+  z-index: 1001;
+  min-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  transition: all 1s linear 0s;
+  display: none;
+}
+#big-container-title {
+	padding-left: 5px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+  border-bottom: 1px dashed #7F7F7F;
+}
+/* Close button (to be used for closing the box with additional info) */
+#button-box {
+  position: fixed;
+  left: 1vw;
+  top: 1vw;
+  cursor: pointer;
+  color: #000;
+  border: 1px solid #AEAEAE;
+  border-radius: 30px;
+  background: #FCA311;
+  font-size: 31px;
+  font-weight: bold;
+  line-height: 0px;
+  padding: 11px 3px;
+  z-index: 9000;
+  transition: all 1s linear 0s;
+  display: none;
+}
+#button-box:before {
+  content: "×";
+}
+.boxclose-open {
+  opacity: 1;
+  visibility: visible;
+}
+.boxclose-closed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Copyright by Matteo Tommasini from row 101 until this point */
